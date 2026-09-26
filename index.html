@@ -583,6 +583,7 @@
             gap: 16px;
         }
 
+        /* 核心：动态分类按钮容器 */
         .category-pills {
             display: flex;
             align-items: center;
@@ -755,12 +756,6 @@
             background: #fef2f2;
             color: var(--color-brand-primary);
             border: 1px solid #fecaca;
-        }
-
-        .badge-overstock {
-            background: #ecfdf5;
-            color: #047857;
-            border: 1px solid #a7f3d0;
         }
 
         .badge-discount-percent {
@@ -1375,7 +1370,7 @@
             <!-- Filter Controls Dock -->
             <div class="filter-dock">
                 <div class="filter-row-top">
-                    <!-- 核心：由 JS 根据表格真实数据动态生成全部品类标签 -->
+                    <!-- 核心：由 JS 根据表格真实数据动态生成全部品类标签！ -->
                     <div class="category-pills" id="dynamicCategoryPills">
                         <button class="pill-btn active" onclick="selectExactType('ALL', this)">All Appliances (<span id="totalUnitCount">...</span>)</button>
                     </div>
@@ -1710,13 +1705,10 @@
         </div>
     </footer>
 
-    <!-- 完全根据表格真实数据动态驱动且支持 6 折兜底与高容错的 JAVASCRIPT -->
+    <!-- 完全根据表格真实 Type 动态驱动的 JAVASCRIPT -->
     <script>
         const GOOGLE_SHEET_ID = '1_KDNRneDDkJ-0EsMC7NmYkmmAU3IR__ADL6cnTUWHK0';
-        const SHEET_NAME_OR_INDEX = 'Sheet1'; // 准确匹配你底部的实际表名 Sheet1
-
-        // 如果在 AppSheet 后台有对应的 AppName（如 InventoryApp-1234567），填入这里；若无保持留空
-        const APPSHEET_APP_NAME = ''; 
+        const SHEET_NAME_OR_INDEX = '1';
 
         let rawInventoryData = [];
         let currentSelectedType = 'ALL';
@@ -1730,19 +1722,6 @@
         const toastElement = document.getElementById('toastElement');
         const toastText = document.getElementById('toastText');
 
-        // 通用容错工具：忽略表头中可能出现的多余空格、特殊字符与大小写
-        function getFuzzyValue(obj, targetKeys) {
-            const keys = Object.keys(obj);
-            for (const tKey of targetKeys) {
-                const normalizedTarget = tKey.replace(/\s+/g, '').toLowerCase();
-                const matchedKey = keys.find(k => k.replace(/\s+/g, '').toLowerCase() === normalizedTarget);
-                if (matchedKey && obj[matchedKey] !== undefined && obj[matchedKey] !== null) {
-                    return obj[matchedKey];
-                }
-            }
-            return '';
-        }
-
         async function fetchLiveInventory() {
             productGridContainer.innerHTML = `
                 <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
@@ -1753,55 +1732,33 @@
             `;
 
             try {
-                // 增加时间戳参数穿透服务端缓存，表格改动后刷新立刻生效
-                const timestamp = Date.now();
-                const fetchUrl = `https://opensheet.elk.sh/${GOOGLE_SHEET_ID}/${encodeURIComponent(SHEET_NAME_OR_INDEX)}?t=${timestamp}`;
-
-                const response = await fetch(fetchUrl);
+                const response = await fetch(`https://opensheet.elk.sh/${GOOGLE_SHEET_ID}/${SHEET_NAME_OR_INDEX}`);
                 const data = await response.json();
 
                 rawInventoryData = data
                     .filter(row => {
-                        const code = String(getFuzzyValue(row, ['A4L Code', 'Code', 'SKU', 'ID', 'Key'])).trim();
+                        const code = (row['A4L Code'] || row['Code'] || '').toString().trim();
                         if (!code || code.toLowerCase() === 'others' || code.toLowerCase() === 'none') {
                             return false;
                         }
-                        const inStockVal = String(getFuzzyValue(row, ['In Stock?', 'In Stock', 'Status']) || 'YES').toUpperCase().trim();
-                        return inStockVal === 'YES' || inStockVal === 'IN STOCK' || inStockVal === 'TRUE' || inStockVal === 'Y';
+                        const inStockVal = (row['In Stock?'] || row['Status'] || 'YES').toString().toUpperCase().trim();
+                        return inStockVal === 'YES' || inStockVal === 'IN STOCK' || inStockVal === 'TRUE';
                     })
                     .map(row => {
-                        const code = String(getFuzzyValue(row, ['A4L Code', 'Code', 'SKU', 'ID', 'Key'])).trim();
-                        const realType = String(getFuzzyValue(row, ['Type', 'Category']) || 'Other').trim();
-                        const brand = String(getFuzzyValue(row, ['Brand']) || 'LG').trim();
-                        const model = String(getFuzzyValue(row, ['Model', 'Model Name']) || 'Floor Model').trim();
-                        const rawGrade = String(getFuzzyValue(row, ['Grade', 'Condition']) || 'Grade B').trim();
+                        // 【核心】：以表格内的 Type 列为绝对真理，保留原始真实类别（如 Dishwasher, Refrigerator）
+                        const realType = (row['Type'] || 'Other').toString().trim();
+                        const brand = (row['Brand'] || 'LG').toString().trim();
+                        const model = (row['Model'] || 'Floor Model').toString().trim();
+                        const rawGrade = (row['Grade'] || 'Grade B').toString().trim();
+                        const msrp = Number(String(row['MAP price'] || 999).replace(/[^0-9.]/g, '')) || 999;
 
-                        // 原价读取
-                        const rawMsrpStr = String(getFuzzyValue(row, ['MAP price', 'MSRP', 'Original Price']) || '999');
-                        const msrp = Number(rawMsrpStr.replace(/[^0-9.]/g, '')) || 999;
+                        // 改价逻辑：绝对优先取 App 填入的 Sale Price
+                        let rawSale = Number(String(row['Sale Price'] || '').replace(/[^0-9.]/g, ''));
+                        let outletPrice = (rawSale && rawSale > 0) ? rawSale : Math.round(msrp * 0.45);
 
-                        // 售价高容错匹配（自动解决空格与大小写差异）
-                        const rawSaleStr = String(getFuzzyValue(row, ['Sale Price', 'SalePrice', 'Sales Price', 'Price']) || '');
-                        const parsedSale = Number(rawSaleStr.replace(/[^0-9.]/g, ''));
-
-                        // 【改价重点】：填了售价用实际售价，未填写走 6 折（40% OFF）兜底
-                        const outletPrice = (parsedSale && parsedSale > 0) ? parsedSale : Math.round(msrp * 0.6);
-
-                        // 图片高容错处理与 AppSheet 相对链接拼接
-                        const rawImg = String(getFuzzyValue(row, ['Image', 'Photo', 'Picture', 'Pic']) || '').trim();
-                        let displayImg = '';
-
-                        if (rawImg) {
-                            if (rawImg.startsWith('http://') || rawImg.startsWith('https://')) {
-                                displayImg = rawImg;
-                            } else if (APPSHEET_APP_NAME) {
-                                displayImg = `https://www.appsheet.com/template/gettablefileurl?appName=${encodeURIComponent(APPSHEET_APP_NAME)}&tableName=${encodeURIComponent(SHEET_NAME_OR_INDEX)}&fileName=${encodeURIComponent(rawImg)}`;
-                            } else {
-                                displayImg = rawImg;
-                            }
-                        }
-
-                        // 无有效照片时的分类兜底图
+                        // 图片：优先展示 App 拍照链接，无图时智能匹配品类宣传图
+                        const rawImg = (row['Image'] || '').toString().trim();
+                        let displayImg = rawImg;
                         if (!displayImg) {
                             const lowType = realType.toLowerCase();
                             if (lowType.includes('ref')) displayImg = 'p3.jpg';
@@ -1825,7 +1782,7 @@
                         }
 
                         return {
-                            id: code,
+                            id: (row['A4L Code'] || '').toString().trim(),
                             type: realType,
                             brand: brand,
                             model: model,
@@ -1839,7 +1796,7 @@
                             warrantyDesc: brand.toUpperCase().includes('GE')
                                 ? '7-Day In-Store Guarantee + 1-Year Official GE Warranty'
                                 : '7-Day In-Store Guarantee + 1-Year Comprehensive OnPoint Warranty',
-                            note: String(getFuzzyValue(row, ['Item Note', 'Note', 'Description']) || 'Certified 100% mechanically functional and test-bench run inspected.')
+                            note: row['Item Note'] || 'Certified 100% mechanically functional and test-bench run inspected.'
                         };
                     });
 
@@ -1851,7 +1808,7 @@
                 productGridContainer.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; padding: 40px 20px;">
                         <p style="color: var(--color-brand-primary); font-weight: 700;">Could not connect to live spreadsheet inventory.</p>
-                        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Please verify Google Sheet permissions or tab name.</p>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Please check Google Sheet permissions or call 910-224-6282.</p>
                     </div>
                 `;
             }
@@ -1912,6 +1869,7 @@
         }
 
         function renderProducts() {
+            // 严格以表格的 type 和 condition 进行比对
             let filtered = rawInventoryData.filter(item => {
                 const matchesType = (currentSelectedType === 'ALL') || 
                                     (item.type.toLowerCase() === currentSelectedType.toLowerCase());
