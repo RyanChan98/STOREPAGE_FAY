@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Appliances 4 Less - Authorized major brand outlet. Shop certified open box, scratch & dent, and excess overstock appliances at up to 65% off MSRP with free 1-year warranty included.">
-    <title>Appliances 4 Less (A4L) | Luxury Brand Outlets — Up to 65% Off</title>
+    <meta name="description" content="APPLIANCES 4 LESS (FAYETTEVILLE) - Authorized major brand outlet. Shop certified open box, scratch & dent, and excess overstock appliances up to 70% off with 1-year warranty included.">
+    <title>Appliances 4 Less Fayetteville | Luxury Brand Outlets — Up to 70% Off</title>
 
     <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,6 @@
 
     <style>
         :root {
-            /* Official A4L Red & Navy Palette */
             --color-brand-primary: #dc2626;
             --color-brand-primary-hover: #b91c1c;
             --color-brand-blue: #2563eb;
@@ -30,11 +29,9 @@
             --color-border: #e2e8f0;
             --color-border-light: #f1f5f9;
 
-            /* Typography */
             --font-display: 'Outfit', -apple-system, sans-serif;
             --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
 
-            /* Shadows & Elevation */
             --shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
             --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
             --shadow-elevated: 0 12px 28px -6px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
@@ -93,7 +90,6 @@
             padding: 0 24px;
         }
 
-        /* Top Announcement Strip */
         .top-strip {
             background: var(--color-brand-navy);
             color: #e2e8f0;
@@ -156,7 +152,6 @@
             text-decoration: underline;
         }
 
-        /* Navigation Header with official logo */
         header.site-header {
             background: #ffffff;
             border-bottom: 1px solid var(--color-border);
@@ -178,14 +173,16 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 900;
+            color: var(--color-brand-navy);
+            letter-spacing: -0.03em;
         }
 
-        .official-brand-logo {
-            height: 38px;
-            width: auto;
-            max-width: 250px;
-            object-fit: contain;
-            display: block;
+        .brand-logo-group span {
+            color: var(--color-brand-primary);
+            margin-left: 4px;
         }
 
         .main-nav-links {
@@ -256,7 +253,6 @@
             box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
         }
 
-        /* Hero Banner */
         .hero-section {
             background: linear-gradient(135deg, #091322 0%, #12223c 55%, #182e52 100%);
             color: #ffffff;
@@ -381,7 +377,6 @@
             border-color: rgba(255, 255, 255, 0.35);
         }
 
-        /* Hero Poster Showcase Image Frame */
         .hero-poster-frame {
             position: relative;
             border-radius: var(--radius-lg);
@@ -432,7 +427,6 @@
             font-size: 0.88rem;
         }
 
-        /* Featured Spotlight Promo Banners (p3.jpg and p2.jpg) */
         .spotlight-section {
             padding: 56px 0 20px;
         }
@@ -542,7 +536,6 @@
             background: var(--color-brand-primary);
         }
 
-        /* Pillars Value Strip */
         .trust-strip {
             background: #ffffff;
             border-top: 1px solid var(--color-border);
@@ -633,7 +626,6 @@
             color: var(--color-brand-primary);
         }
 
-        /* Filter Controls */
         .filter-dock {
             background: #ffffff;
             border: 1px solid var(--color-border);
@@ -768,7 +760,6 @@
             color: var(--color-brand-primary);
         }
 
-        /* Product Cards Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
@@ -1020,7 +1011,6 @@
             border-color: #cbd5e1;
         }
 
-        /* Financing & Partners Strip */
         .partners-section {
             background: #ffffff;
             border-top: 1px solid var(--color-border);
@@ -1071,6 +1061,12 @@
             color: #ffffff;
         }
 
+        .partner-pill.snap-highlight {
+            background: #dc2626;
+            border-color: #f87171;
+            color: #ffffff;
+        }
+
         .finance-calculator-box {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1091,7 +1087,6 @@
             margin-bottom: 16px;
         }
 
-        /* Showroom & Map section */
         .showroom-section {
             padding: 72px 0;
         }
@@ -1158,7 +1153,6 @@
             display: block;
         }
 
-        /* In-Store Hold Form */
         .inquiry-box {
             background: #ffffff;
             border: 1px solid var(--color-border);
@@ -1207,7 +1201,6 @@
             box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
         }
 
-        /* FAQ Accordion */
         .faq-section {
             background: #ffffff;
             border-top: 1px solid var(--color-border);
@@ -1269,7 +1262,6 @@
             padding: 0 24px 20px 24px;
         }
 
-        /* Modal Backdrop & Cards */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -1348,7 +1340,6 @@
             line-height: 1.5;
         }
 
-        /* Toast Feedback */
         .toast-banner {
             position: fixed;
             bottom: 24px;
@@ -1377,7 +1368,6 @@
             pointer-events: auto;
         }
 
-        /* Footer */
         footer.site-footer {
             background: #060c17;
             color: #94a3b8;
@@ -1401,17 +1391,16 @@
         }
 
         .footer-logo-wrap {
-            background: #ffffff;
-            padding: 8px 14px;
-            border-radius: var(--radius-sm);
-            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
 
-        .footer-logo-wrap img {
-            height: 32px;
-            width: auto;
-            display: block;
+        .footer-logo-wrap span {
+            color: var(--color-brand-primary);
         }
 
         .footer-title {
@@ -1450,7 +1439,6 @@
             color: #64748b;
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -1495,9 +1483,6 @@
             .top-strip {
                 display: none;
             }
-            .official-brand-logo {
-                height: 30px;
-            }
         }
     </style>
 </head>
@@ -1508,40 +1493,40 @@
         <div class="container top-strip-inner">
             <div style="display: flex; align-items: center; gap: 10px;">
                 <span class="top-badge-live">
-                    <span class="pulse-dot"></span> Official A4L Outlet
+                    <span class="pulse-dot"></span> APPLIANCES 4 LESS
                 </span>
-                <span>Scratch & Dent • Open Box • Up to 70% Off MSRP • 1-Year Warranty Included</span>
+                <span>Scratch & Dent • Open Box • Up to 70% Off • 7-Day In-Store Guarantee & 1-Year Warranty Included</span>
             </div>
             <div class="top-strip-links">
-                <span>Same-Day Local Delivery & Haul-Away</span>
-                <a onclick="openGradingModal()" style="cursor: pointer;">Grading Standard Guide</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 700; text-decoration: none;">📍 Get Directions (Google Maps)</a>
+                <a onclick="openGradingModal()" style="cursor: pointer;">A4L Condition & Grading Guide</a>
             </div>
         </div>
     </div>
 
-    <!-- Main Navigation Bar with Official Logo -->
+    <!-- Main Navigation Bar -->
     <header class="site-header">
         <div class="container nav-wrapper">
             <a href="#" class="brand-logo-group" aria-label="Appliances 4 Less Home">
-                <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="official-brand-logo" onerror="this.src='https://placehold.co/240x40/091322/ffffff?text=APPLIANCES+4+LESS'">
+                APPLIANCES 4<span> LESS</span>
             </a>
 
             <ul class="main-nav-links">
                 <li><a href="#catalog" onclick="filterByCategory('all')">Inventory</a></li>
-                <li><a href="#spotlights">Special Promos</a></li>
+                <li><a href="#spotlights">Special Deals</a></li>
                 <li><a href="#catalog" onclick="filterByCategory('refrigerators')">Refrigerators</a></li>
                 <li><a href="#catalog" onclick="filterByCategory('laundry')">Washers & Dryers</a></li>
                 <li><a href="#catalog" onclick="filterByCategory('cooking')">Ranges & Ovens</a></li>
-                <li><a href="#financing">Financing</a></li>
+                <li><a href="#financing">Financing (In-Store)</a></li>
                 <li><a href="#showroom">Showroom</a></li>
             </ul>
 
             <div class="nav-actions">
-                <a href="tel:8004569988" class="phone-badge">
+                <a href="tel:9102246282" class="phone-badge">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    <span>(800) 456-9988</span>
+                    <span>910-224-6282</span>
                 </a>
                 <button class="btn-reserve-nav" onclick="scrollToElement('catalog')">
                     Hold a Unit
@@ -1550,31 +1535,32 @@
         </div>
     </header>
 
-    <!-- Hero Section (Featuring p4.jpg) -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-pattern"></div>
         <div class="hero-glow"></div>
         <div class="container hero-grid">
             <div>
                 <div class="hero-pill">
-                    <span class="tag-highlight">★ Direct Factory Clearance</span>
+                    <span class="tag-highlight">★ Authorized A4L Outlet Network</span>
                     <span>Prices That Won't Break Your Budget!</span>
                 </div>
                 <h1 class="hero-heading">
-                    Luxury Brand Appliances. <br>
-                    <span class="text-gradient">30% to 70% Off</span> Retail.
+                    Major Brand Appliances. <br>
+                    <span class="text-gradient">Up to 70% Off</span>.
                 </h1>
                 <p class="hero-desc">
-                    Shop certified open box, floor models, and minor cosmetic scratch & dent refrigerators, washers, dryers, and slide-in ranges from LG, Samsung, GE Profile, and KitchenAid.
+                    Shop certified open box, floor models, and cosmetic scratch & dent appliances. First 7 days in-store guarantee; GE models backed by 1-year official manufacturer warranty, all other brands backed by 1-year comprehensive OnPoint warranty.
                 </p>
                 <div class="hero-cta-group">
                     <button class="btn-hero-primary" onclick="scrollToElement('catalog')">
                         Explore Live Floor Deals
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
-                    <button class="btn-hero-secondary" onclick="scrollToElement('spotlights')">
-                        View Spotlight Deals
-                    </button>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" class="btn-hero-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Directions in Google Maps
+                    </a>
                 </div>
                 <div style="display: flex; align-items: center; gap: 16px; color: #94a3b8; font-size: 0.82rem; flex-wrap: wrap;">
                     <span>Clearance authorized for:</span>
@@ -1586,33 +1572,33 @@
                 </div>
             </div>
 
-            <!-- Material Asset p4.jpg Showcase Frame -->
+            <!-- Material Asset Showcase Frame -->
             <div class="hero-poster-frame">
-                <img src="p4.jpg" alt="Appliances 4 Less - Prices That Won't Break Your Budget!" class="hero-poster-img" onerror="this.src='https://placehold.co/600x600/091322/ffffff?text=Prices+That+Won%27t+Break+Your+Budget!'">
+                <img src="p4.jpg" alt="Appliances 4 Less - Prices That Won't Break Your Budget!" class="hero-poster-img" onerror="this.src='https://placehold.co/600x600/091322/ffffff?text=Up+to+70%25+Off'">
                 <div class="hero-poster-badge">
                     <div>
                         <strong>Full Kitchen & Laundry Packages</strong>
-                        <div style="font-size: 0.76rem; color: #94a3b8;">100% Tested & Verified</div>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">100% Tested & Verified Functional</div>
                     </div>
-                    <span>SAVE UP TO 65%</span>
+                    <span>SAVE UP TO 70%</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Material Promo Spotlights (Featuring p3.jpg and p2.jpg) -->
+    <!-- Material Promo Spotlights -->
     <section class="spotlight-section" id="spotlights">
         <div class="container">
             <div style="text-align: center; margin-bottom: 36px;">
-                <span style="color: var(--color-brand-primary); font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Featured Showroom Campaigns</span>
+                <span style="color: var(--color-brand-primary); font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Featured Showroom Deals</span>
                 <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 4px;">Clearance Department Highlights</h2>
                 <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
-                    Direct access to specialized overstock truckloads. Inspect high-definition photos or hold the exact unit online.
+                    Direct access to specialized liquidations and showroom floor models. Inspect in person or hold the exact serial number online for 24 hours.
                 </p>
             </div>
 
             <div class="spotlight-grid">
-                <!-- Promo 1: p3.jpg (Refrigerators Clearance) -->
+                <!-- Promo 1: Refrigerators -->
                 <div class="spotlight-card">
                     <div class="spotlight-poster-wrap">
                         <img src="p3.jpg" alt="Refrigerators Clearance - Open-Box Scratch & Dent" class="spotlight-poster-img" onerror="this.src='https://placehold.co/600x600/e11d48/ffffff?text=Refrigerators+Clearance'">
@@ -1622,7 +1608,7 @@
                             <span class="spotlight-tag">French Door & Side-by-Side</span>
                             <h3 class="spotlight-title">Refrigerators Clearance: Open-Box & Scratch & Dent</h3>
                             <p class="spotlight-desc">
-                                Premium 3-door & 4-door French door refrigerators with built-in craft ice makers and beverage centers. Minor cosmetic marks on sides only, face panels in mint condition.
+                                Premium 3-door & 4-door French door refrigerators with built-in craft ice makers and beverage centers. Minor cosmetic marks on sides only; face panels in mint condition.
                             </p>
                         </div>
                         <div class="spotlight-actions">
@@ -1637,7 +1623,7 @@
                     </div>
                 </div>
 
-                <!-- Promo 2: p2.jpg (Laundry / Washers) -->
+                <!-- Promo 2: Laundry -->
                 <div class="spotlight-card">
                     <div class="spotlight-poster-wrap">
                         <img src="p2.jpg" alt="Scratch & Dent, Perfect For Budget Shoppers" class="spotlight-poster-img" onerror="this.src='https://placehold.co/600x600/dc2626/ffffff?text=Scratch+%26+Dent+Laundry'">
@@ -1647,7 +1633,7 @@
                             <span class="spotlight-tag">Washers & Steam Dryers</span>
                             <h3 class="spotlight-title">Scratch & Dent, Perfect For Budget Shoppers</h3>
                             <p class="spotlight-desc">
-                                High-efficiency front load and smart impellor top load laundry pairs. Tested on our 38-point mechanical run bench with free 1-year in-store warranty included.
+                                High-efficiency front load and smart impeller top load laundry pairs. Run-tested on our test bench with 7-day in-store guarantee and 1-year OnPoint/GE warranty.
                             </p>
                         </div>
                         <div class="spotlight-actions">
@@ -1673,26 +1659,8 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 </div>
                 <div class="trust-content">
-                    <h5>38-Point Quality Bench Check</h5>
-                    <p>Compressors, valves & heating elements run-tested.</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                </div>
-                <div class="trust-content">
-                    <h5>Local White-Glove Delivery</h5>
-                    <p>Same-day or next-day delivery & old unit haul-away.</p>
-                </div>
-            </div>
-            <div class="trust-item">
-                <div class="trust-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                </div>
-                <div class="trust-content">
-                    <h5>Unmatched Savings</h5>
-                    <p>Direct volume liquidations save you $500–$1,800+.</p>
+                    <h5>7-Day In-Store Guarantee</h5>
+                    <p>First 7 days covered directly by our showroom for hassle-free service.</p>
                 </div>
             </div>
             <div class="trust-item">
@@ -1700,8 +1668,26 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
                 <div class="trust-content">
-                    <h5>1-Year Protection Standard</h5>
-                    <p>Every unit backed by our certified floor technicians.</p>
+                    <h5>1-Year Warranty Included</h5>
+                    <p>Official 1-Yr GE factory warranty; 1-Yr OnPoint warranty for all other brands.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="trust-content">
+                    <h5>Direct Liquidation Savings</h5>
+                    <p>Volume truckloads save you up to 70% off big-box retail MSRP.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <div class="trust-content">
+                    <h5>Local Delivery & Haul-Away</h5>
+                    <p>Prompt delivery across Cumberland County with haul-away available.</p>
                 </div>
             </div>
         </div>
@@ -1713,7 +1699,7 @@
             <div class="section-header-row">
                 <div class="section-title-wrap">
                     <h2>Current Floor Inventory</h2>
-                    <p>Serialized units in stock right now. Reserve online for an instant 24-hour showroom hold.</p>
+                    <p>Serialized inventory units in stock. Reserve online for a zero-down 24-hour showroom hold.</p>
                 </div>
                 <button class="btn-grading-guide" onclick="openGradingModal()">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
@@ -1756,35 +1742,33 @@
             </div>
 
             <!-- Dynamic Product Grid -->
-            <div class="products-grid" id="productGridContainer">
-                <!-- Javascript will inject cards here -->
-            </div>
+            <div class="products-grid" id="productGridContainer"></div>
         </div>
     </section>
 
-    <!-- Financing Banner Strip -->
+    <!-- Financing Banner Strip (Snap Finance Highlight - In-Store Requirement) -->
     <section class="partners-section" id="financing">
         <div class="container">
             <div class="financing-card-banner">
                 <div class="financing-info">
-                    <h3>Flexible No-Credit Financing Available</h3>
+                    <h3>No Credit Needed Financing: Snap! Finance (In-Store Only)</h3>
                     <p>
-                        Take home your dream refrigerator or laundry suite today with as little as <strong>$50 initial payment</strong>. Soft credit pulls will never impact your score, and early 90 to 100-day cash buyouts let you save maximum cash.
+                        Take home your appliances today with <strong>low down payment</strong> and our <strong>90-day no interest payment option</strong>. Snap! Finance applications are processed directly <strong>at our showroom desk</strong> for immediate on-the-spot approval!
                     </p>
                     <div class="partner-logos-wrap">
-                        <span class="partner-pill">Acima Credit</span>
-                        <span class="partner-pill">Snap! Finance</span>
-                        <span class="partner-pill">Affirm</span>
-                        <span class="partner-pill">Kafene</span>
-                        <span class="partner-pill">Synchrony Bank</span>
+                        <span class="partner-pill snap-highlight">★ Apply In-Store with Snap!</span>
+                        <span class="partner-pill">Low Down Payment</span>
+                        <span class="partner-pill">90-Day No Interest</span>
+                        <span class="partner-pill">No Credit Needed</span>
                     </div>
                 </div>
                 <div class="finance-calculator-box">
-                    <h4>Pre-Qualify in 60 Seconds</h4>
-                    <p>Get up to $5,000 spending limit before stepping foot into the store.</p>
-                    <button class="btn-hero-primary" style="width: 100%; justify-content: center;" onclick="triggerToast('Financing pre-qualification portal opening. Ask store representative for prompt SMS link!')">
-                        Apply Now Online
-                    </button>
+                    <h4>Visit Showroom to Apply</h4>
+                    <p>Stop by our store with your photo ID and checking account info to complete your Snap approval in minutes.</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="width: 100%; justify-content: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Get Directions to Apply In Store
+                    </a>
                 </div>
             </div>
         </div>
@@ -1796,26 +1780,31 @@
             <div class="showroom-details-card">
                 <div>
                     <span style="color: var(--color-brand-primary); font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">Direct Walk-Ins Welcome</span>
-                    <h3>Visit Our Local Showroom</h3>
-                    <p class="showroom-intro">Inspect any model inside and out, test mechanical features on our diagnostic power bench, and choose between immediate vehicle pickup or white-glove home delivery.</p>
+                    <h3>Visit Appliances 4 Less</h3>
+                    <p class="showroom-intro">Inspect every model inside and out, test mechanical features on our diagnostic power bench, and choose between immediate vehicle pickup or white-glove home delivery.</p>
 
+                    <!-- Clickable Showroom Address for Mobile Google Maps -->
                     <div class="detail-row">
                         <div class="detail-icon-box">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
                         <div class="detail-text">
                             <strong>Showroom Address</strong>
-                            <span>7420 Commercial Outlet Boulevard, Suite 104<br>Retail Plaza (Adjacent to Costco & Home Depot)</span>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline; text-decoration-color: #cbd5e1;">
+                                3621 Sycamore Dairy Rd<br>Fayetteville, NC 28303
+                            </a>
+                            <span style="display: inline-block; font-size: 0.78rem; color: var(--color-brand-blue); font-weight: 700; margin-top: 4px;">➔ Tap to open in Google Maps</span>
                         </div>
                     </div>
 
+                    <!-- Updated Operating Hours from image -->
                     <div class="detail-row">
                         <div class="detail-icon-box">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                         </div>
                         <div class="detail-text">
                             <strong>Operating Hours</strong>
-                            <span>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: 12:00 PM – 6:00 PM</span>
+                            <span>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: 11:00 AM – 7:00 PM</span>
                         </div>
                     </div>
 
@@ -1824,15 +1813,16 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         </div>
                         <div class="detail-text">
-                            <strong>Call or Text Our Floor Specialists</strong>
-                            <span>Main Desk: (910) 224 6282 | Live Photo SMS: (555) 234-5678</span>
+                            <strong>Call or Text Our Specialists</strong>
+                            <span>Phone: <a href="tel:9102246282" style="font-weight: 700; color: var(--color-brand-primary);">910-224-6282</a></span>
                         </div>
                     </div>
                 </div>
 
                 <div style="margin-top: 24px;">
-                    <a href="https://maps.google.com" target="_blank" class="btn-hero-primary" style="padding: 12px 24px; font-size: 0.88rem; display: inline-flex;">
-                        Open Directions in Maps
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="padding: 12px 24px; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 8px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Open Navigation in Google Maps
                     </a>
                 </div>
             </div>
@@ -1840,7 +1830,7 @@
             <!-- In-Store Hold & Quote Form -->
             <div class="inquiry-box">
                 <h3>Request Specific Model Check</h3>
-                <p class="subtext">Looking for a specific model, French door width, or color finish? Send us your requirements and our inventory manager will text you live photos within 15 minutes.</p>
+                <p class="subtext">Looking for a specific model, French door width, or finish? Submit your request and our showroom team will text you live photos within 15 minutes.</p>
 
                 <form onsubmit="handleGeneralInquiry(event)">
                     <div class="form-group">
@@ -1850,7 +1840,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="formContact">Phone Number (For SMS Photos)</label>
-                        <input type="tel" id="formContact" class="form-control" placeholder="(555) 000-0000" required>
+                        <input type="tel" id="formContact" class="form-control" placeholder="910-224-6282" required>
                     </div>
 
                     <div class="form-group">
@@ -1859,8 +1849,8 @@
                             <option value="refrigerator">Refrigerator (French Door, Side-by-Side)</option>
                             <option value="washer-dryer">Washer & Dryer Set</option>
                             <option value="range">Range / Oven (Gas or Electric)</option>
-                            <option value="dishwasher">Dishwasher (Ultra-Quiet Built-in)</option>
-                            <option value="other">Full Kitchen Package</option>
+                            <option value="dishwasher">Dishwasher (Built-in)</option>
+                            <option value="other">Full Kitchen / Laundry Package</option>
                         </select>
                     </div>
 
@@ -1887,48 +1877,53 @@
 
             <div class="faq-item active">
                 <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>What warranty comes with my appliance?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer" style="max-height: 250px;">
+                    <div class="faq-answer-inner">
+                        <p><strong>First 7 Days:</strong> Every unit is covered directly by our showroom with our 7-Day In-Store Guarantee (exchange or direct in-store remedy if any mechanical defect arises).</p>
+                        <p style="margin-top: 8px;"><strong>After 7 Days (1-Year Coverage):</strong></p>
+                        <ul style="margin: 6px 0 0 18px; line-height: 1.5;">
+                            <li><strong>GE Appliances:</strong> Covered by GE's official 1-year manufacturer factory warranty.</li>
+                            <li><strong>All Other Brands (LG, Samsung, Whirlpool, KitchenAid, etc.):</strong> Covered by a comprehensive 1-year third-party warranty provided by <strong>OnPoint Warranty Solutions</strong>, covering functional parts and professional technician labor.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>How does Snap Financing work? Can I do it online?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Snap! Finance applications <strong>must be completed in person at our showroom</strong>. Our staff will guide you through the fast, paperless application on our store terminal. You get an immediate approval decision with low down payment and a 90-day no interest payment option. No credit needed!
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
                     <span>Where do your appliances come from?</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </button>
-                <div class="faq-answer" style="max-height: 200px;">
+                <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        Our inventory is sourced directly from major manufacturer liquidation programs, retail distribution overstock, and customer freight returns from national big-box stores. Every unit is 100% genuine major brand merchandise.
+                        Our inventory is sourced directly from major brand manufacturers (LG, Samsung, Whirlpool, GE) through authorized liquidation programs, surplus overstock, and customer freight returns from national big-box retailers. Every unit is authentic and thoroughly tested on our run bench.
                     </div>
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">
-                    <span>What warranty comes with the appliances?</span>
+                    <span>Do you offer delivery and hookup accessories?</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-inner">
-                        All appliances purchased at Appliances 4 Less automatically include our complimentary 1-Year In-Store Mechanical Warranty (covering all essential functional parts and labor). You also have the option at checkout to add an extended 2 or 4-year plan through Consumer Priority Service (CPS).
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    <span>How does the free 24-hour item hold work?</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        Because each scratch-and-dent unit is one-of-a-kind with a unique serial number, clicking "Hold for 24h" lets you lock that exact serial code in our warehouse management system. No credit card is required. You can then come in person, examine the appliance, and decide if you'd like to take it home.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    <span>Do you offer delivery and old appliance haul-away?</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-inner">
-                        Yes! We offer local white-glove delivery within a 35-mile radius of our showroom. Our team can bring the unit inside, hook up basic water lines and dryer cords, and responsibly haul away your old broken appliance for recycling.
+                        Yes! We offer local professional delivery and haul-away. We also supply certified installation accessories including stainless steel washer hoses, 3-prong & 4-prong dryer power cords, range cables, and semi-rigid aluminum vent ducts.
                     </div>
                 </div>
             </div>
@@ -1939,25 +1934,25 @@
     <div class="modal-overlay" id="gradingModalOverlay">
         <div class="modal-content-card">
             <button class="modal-close-btn" onclick="closeGradingModal()">&times;</button>
-            <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-brand-primary); text-transform: uppercase;">Honest Inspection Disclosure</span>
-            <h3 style="font-size: 1.45rem; margin: 4px 0 12px;">Appliance Cosmetic Grading Scale</h3>
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-brand-primary); text-transform: uppercase;">A4L Inspection Disclosure</span>
+            <h3 style="font-size: 1.45rem; margin: 4px 0 12px;">Appliance Condition Grading Standard</h3>
             <p style="font-size: 0.86rem; color: var(--color-text-muted); margin-bottom: 20px;">
-                We categorize all floor models into clear condition tiers so there are never surprises. Every single appliance is verified 100% mechanically functional.
+                We categorize all floor inventory into explicit tiers so you know the exact condition of what you buy. Every single appliance is verified 100% mechanically functional.
             </p>
 
             <div class="grade-detail-box" style="border-left: 4px solid #1d4ed8; background: #f8fbff;">
                 <h5 style="color: #1d4ed8;">Grade A: Open Box / Floor Model</h5>
-                <p>Prong or carton damage during transit. The appliance itself has never been used in a residence and shows zero to near-undetectable cosmetic scuffs. Complete with original accessory packs and manuals.</p>
+                <p>Packaging distressed or unboxed for display. The appliance shows zero to near-undetectable cosmetic marks, includes all original shelves/bins, and operates in mint condition.</p>
             </div>
 
             <div class="grade-detail-box" style="border-left: 4px solid var(--color-brand-primary); background: #fef2f2;">
                 <h5 style="color: var(--color-brand-primary);">Grade B: Minor Scratch & Dent</h5>
-                <p>Superficial side, top, or rear cabinet scuffs that occur in distribution warehouse handling. Front faces and control touchscreens are clean. Perfect for fitted cabinetry where sides are hidden anyway!</p>
+                <p>Superficial scuffs, scratches, or shallow dings on side or rear cabinets from logistics handling. Front exterior faces and electronic touch panels remain clean.</p>
             </div>
 
             <div class="grade-detail-box" style="border-left: 4px solid #047857; background: #f0fdf4;">
-                <h5 style="color: #047857;">Grade C / Factory Overstock</h5>
-                <p>Excess production lots, discontinued seasonal finishes, or carton clearance units. Mechanically factory-fresh at steep bulk wholesale discounts.</p>
+                <h5 style="color: #047857;">Grade C / Factory Surplus Overstock</h5>
+                <p>Discontinued model runs, excess distributor inventory, or carton-damage units discounted up to 70% off retail MSRP.</p>
             </div>
 
             <button class="btn-hero-primary" style="width: 100%; justify-content: center; margin-top: 12px;" onclick="closeGradingModal()">
@@ -1966,13 +1961,11 @@
         </div>
     </div>
 
-    <!-- Product Quick View & Inspection Modal -->
+    <!-- Product Quick View Modal -->
     <div class="modal-overlay" id="detailModalOverlay">
         <div class="modal-content-card">
             <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
-            <div id="detailModalContainer">
-                <!-- Javascript will inject data -->
-            </div>
+            <div id="detailModalContainer"></div>
         </div>
     </div>
 
@@ -1996,19 +1989,19 @@
 
                 <div class="form-group">
                     <label class="form-label" for="resPhone">Mobile Phone (For 24-Hr Hold SMS Voucher)</label>
-                    <input type="tel" id="resPhone" class="form-control" placeholder="(555) 000-0000" required>
+                    <input type="tel" id="resPhone" class="form-control" placeholder="910-224-6282" required>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="resPreference">Planned Pickup or Delivery</label>
                     <select id="resPreference" class="form-control">
-                        <option value="pickup">I will inspect & pick up at the showroom</option>
+                        <option value="pickup">I will inspect & pick up at the showroom (3621 Sycamore Dairy Rd)</option>
                         <option value="delivery">I would like a quote for home delivery & hookup</option>
                     </select>
                 </div>
 
                 <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 18px; font-size: 0.78rem; color: #64748b;">
-                    🛡️ <strong>No payment needed right now.</strong> We will hold this serial number exclusively for 24 hours so you can inspect it in-store before paying.
+                    🛡️ <strong>No credit card required.</strong> 7-day in-store guarantee + 1-year GE/OnPoint warranty included.
                 </div>
 
                 <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center;">
@@ -2024,71 +2017,84 @@
         <span id="toastText">Action completed successfully!</span>
     </div>
 
-    <!-- Site Footer with Official Logo -->
+    <!-- Site Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
                     <div class="footer-logo-wrap">
-                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" onerror="this.src='https://placehold.co/200x32/ffffff/091322?text=A4L+OUTLET'">
+                        APPLIANCES 4 <span>LESS</span>
                     </div>
                     <p>
-                        Appliances 4 Less is an authorized retail liquidation outlet specializing in open-box, excess overstock, and scratch & dent premium household appliances at 30% to 70% below retail MSRP.
+                        Appliances 4 Less (Fayetteville) specializes in verified open-box, excess overstock, and scratch & dent premium household appliances at up to 70% off retail prices.
                     </p>
-                    <div style="font-weight: 800; color: #ffffff; font-size: 0.95rem;">
-                        Floor Inquiries: (800) 456-9988
+                    <div style="font-weight: 800; color: #ffffff; font-size: 0.95rem; margin-bottom: 6px;">
+                        Direct Line: <a href="tel:9102246282" style="color: #f87171;">910-224-6282</a>
+                    </div>
+                    <div style="color: #cbd5e1; font-size: 0.85rem; margin-bottom: 8px;">
+                        📍 <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: underline;">3621 Sycamore Dairy Rd, Fayetteville NC, 28303 (Open Google Maps)</a>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="footer-title">Major Appliance Outlets</h4>
+                    <h4 class="footer-title">Major Appliance Categories</h4>
                     <ul class="footer-links">
                         <li><a href="#catalog" onclick="filterByCategory('refrigerators')">French Door Refrigerators</a></li>
                         <li><a href="#catalog" onclick="filterByCategory('laundry')">Front & Top Load Washers</a></li>
                         <li><a href="#catalog" onclick="filterByCategory('laundry')">Electric & Gas Dryers</a></li>
                         <li><a href="#catalog" onclick="filterByCategory('cooking')">Slide-In Ranges & Cooktops</a></li>
-                        <li><a href="#catalog" onclick="filterByCategory('dishwashers')">Built-In Smart Dishwashers</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('dishwashers')">Built-In Quiet Dishwashers</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="footer-title">Customer Assurance</h4>
+                    <h4 class="footer-title">Financing & Protection</h4>
                     <ul class="footer-links">
-                        <li><a onclick="openGradingModal()" style="cursor: pointer;">Cosmetic Grading Criteria</a></li>
-                        <li><a href="#financing">1-Year Standard Warranty</a></li>
-                        <li><a href="#financing">Extended CPS Protection Plan</a></li>
-                        <li><a href="#financing">Acima & Snap Financing Terms</a></li>
-                        <li><a href="#showroom">Delivery & Installation Policies</a></li>
+                        <li><a href="#financing">Snap! Finance (In-Store Application)</a></li>
+                        <li><a href="#financing">Low Down Payment Options</a></li>
+                        <li><a href="#financing">90-Day No Interest Payment</a></li>
+                        <li><a href="#faq">7-Day In-Store Guarantee</a></li>
+                        <li><a href="#faq">1-Yr GE / OnPoint Warranty</a></li>
                     </ul>
                 </div>
 
+                <!-- Operating hours matched with reference image -->
                 <div>
                     <h4 class="footer-title">Showroom Hours</h4>
-                    <p style="font-size: 0.84rem; line-height: 1.8; color: #94a3b8;">
-                        Mon – Sat: 10:00 AM – 7:00 PM<br>
-                        Sun: 12:00 PM – 6:00 PM<br>
-                        <span style="color: #60a5fa;">Same-day pickup available until 6:30 PM.</span>
+                    <p style="font-size: 0.84rem; line-height: 1.8; color: #cbd5e1;">
+                        <strong>Saturday:</strong> 10:00 AM – 7:00 PM<br>
+                        <strong>Sunday:</strong> 11:00 AM – 7:00 PM<br>
+                        <strong>Monday:</strong> 10:00 AM – 7:00 PM<br>
+                        <strong>Tuesday:</strong> 10:00 AM – 7:00 PM<br>
+                        <strong>Wednesday:</strong> 10:00 AM – 7:00 PM<br>
+                        <strong>Thursday:</strong> 10:00 AM – 7:00 PM<br>
+                        <strong>Friday:</strong> 10:00 AM – 7:00 PM
                     </p>
                 </div>
             </div>
 
             <div class="footer-bottom-bar">
-                <div>© 2026 Appliances 4 Less (A4L) Outlet Inc. All Rights Reserved.</div>
-                <div>Official Outlet Partner for LG, Samsung, GE Profile, Whirlpool, KitchenAid, and Bosch.</div>
+                <div>© 2026 Appliances 4 Less (Fayetteville). All Rights Reserved.</div>
+                <div>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: #94a3b8;">
+                        3621 Sycamore Dairy Rd, Fayetteville NC, 28303
+                    </a> 
+                    | Phone: <a href="tel:9102246282" style="color: #94a3b8;">910-224-6282</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // High-Fidelity In-Memory Inventory Data
         const showroomInventory = [
             {
-                id: "A4L-9041",
+                id: "AO-9041",
                 category: "refrigerators",
                 conditionType: "openbox",
                 conditionLabel: "Grade A: Open Box",
                 conditionClass: "badge-openbox",
                 brand: "LG Electronics",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "LRMVS3006S",
                 title: "LG 30 cu. ft. Smart Wi-Fi French Door Refrigerator with Craft Ice™",
                 inspectionNotes: "Mint showroom display condition. Unboxed for display only. Dual ice makers fully benchmark tested.",
@@ -2100,12 +2106,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="12" y1="2" x2="12" y2="10"/><line x1="9" y1="5" x2="9" y2="7"/><line x1="15" y1="5" x2="15" y2="7"/><rect x="7" y="14" width="10" height="4" rx="1"/></svg>`
             },
             {
-                id: "A4L-8820",
+                id: "AO-8820",
                 category: "laundry",
                 conditionType: "scratchdent",
                 conditionLabel: "Grade B: Scratch & Dent",
                 conditionClass: "badge-scratchdent",
                 brand: "Samsung",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "WF45B6300AC",
                 title: "Samsung 4.5 cu. ft. Smart Front Load Washer with Super Speed Wash",
                 inspectionNotes: "Superficial 1-inch scuff on right side enclosure. Front glass door and digital touch bezel are 100% spotless.",
@@ -2117,12 +2124,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="2.5"/><circle cx="8" cy="6" r="1"/><circle cx="11" cy="6" r="1"/><line x1="15" y1="6" x2="18" y2="6"/></svg>`
             },
             {
-                id: "A4L-7419",
+                id: "AO-7419",
                 category: "cooking",
                 conditionType: "overstock",
                 conditionLabel: "Overstock / Surplus",
                 conditionClass: "badge-overstock",
                 brand: "GE Profile",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year Official GE Factory Warranty",
                 model: "PGS930YPFS",
                 title: "GE Profile 30\" Smart Slide-In Gas Range with No-Preheat Air Fry",
                 inspectionNotes: "Brand new warehouse excess unit. Original protective film still intact on cooktop and stainless backsplash.",
@@ -2134,12 +2142,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><circle cx="8" cy="6" r="1.5"/><circle cx="12" cy="6" r="1.5"/><circle cx="16" cy="6" r="1.5"/><rect x="7" y="12" width="10" height="6" rx="1"/></svg>`
             },
             {
-                id: "A4L-6512",
+                id: "AO-6512",
                 category: "dishwashers",
                 conditionType: "openbox",
                 conditionLabel: "Grade A: Open Box",
                 conditionClass: "badge-openbox",
                 brand: "KitchenAid",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "KDTE204KPS",
                 title: "KitchenAid 39 dBA Ultra-Quiet Top Control Dishwasher with 3rd Rack",
                 inspectionNotes: "Direct store return from cabinetry mismatch. Full water cycle tested, sanitized, and re-bagged.",
@@ -2151,12 +2160,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2.5"/><line x1="3" y1="9" x2="21" y2="9"/><rect x="8" y="5.5" width="8" height="1.5" rx="0.5"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`
             },
             {
-                id: "A4L-9118",
+                id: "AO-9118",
                 category: "refrigerators",
                 conditionType: "scratchdent",
                 conditionLabel: "Grade B: Scratch & Dent",
                 conditionClass: "badge-scratchdent",
                 brand: "Samsung",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "RF29A9671SR",
                 title: "Samsung 29 cu. ft. 4-Door Flex™ Refrigerator with Beverage Center™",
                 inspectionNotes: "Small bottom drawer corner dent; unnoticeable from standing view. Features dual auto ice maker and auto-fill pitcher.",
@@ -2168,12 +2178,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="12" y1="2" x2="12" y2="12"/><line x1="9" y1="6" x2="9" y2="8"/><line x1="15" y1="6" x2="15" y2="8"/><line x1="12" y1="12" x2="12" y2="22"/></svg>`
             },
             {
-                id: "A4L-8390",
+                id: "AO-8390",
                 category: "laundry",
                 conditionType: "overstock",
                 conditionLabel: "Overstock / Surplus",
                 conditionClass: "badge-overstock",
                 brand: "LG Electronics",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "DLEX4000W",
                 title: "LG 7.4 cu. ft. Ultra Large Smart Electric Dryer with TurboSteam™",
                 inspectionNotes: "Factory unboxed allocation. Flawless white enamel finish, heavy-duty drum, and electronic touch control.",
@@ -2185,12 +2196,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><circle cx="12" cy="13" r="5.5"/><circle cx="12" cy="6" r="1.2"/><line x1="16" y1="6" x2="18" y2="6"/></svg>`
             },
             {
-                id: "A4L-7201",
+                id: "AO-7201",
                 category: "cooking",
                 conditionType: "scratchdent",
                 conditionLabel: "Grade B: Scratch & Dent",
                 conditionClass: "badge-scratchdent",
                 brand: "Whirlpool",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "WFE525S0JZ",
                 title: "Whirlpool 5.3 cu. ft. 5-Element Freestanding Electric Range with Frozen Bake",
                 inspectionNotes: "Light hairline rub mark on side flange from uncrating. Ceramic glass cooktop is scratch-free.",
@@ -2202,12 +2214,13 @@
                 svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="6" y="5" width="12" height="3" rx="1"/><circle cx="8" cy="12" r="1.5"/><circle cx="16" cy="12" r="1.5"/><circle cx="12" cy="15" r="1.5"/></svg>`
             },
             {
-                id: "A4L-6110",
+                id: "AO-6110",
                 category: "dishwashers",
                 conditionType: "openbox",
                 conditionLabel: "Grade A: Open Box",
                 conditionClass: "badge-openbox",
                 brand: "Bosch",
+                warrantyDesc: "7-Day In-Store Guarantee + 1-Year OnPoint Warranty",
                 model: "SHP865ZD5N",
                 title: "Bosch 500 Series 24\" Built-In Pocket Handle Dishwasher with AutoAir®",
                 inspectionNotes: "Customer return within 48h due to electrical line spec. Certified sanitized and bench-tested.",
@@ -2220,20 +2233,16 @@
             }
         ];
 
-        // Active State Filters
         let activeCategory = 'all';
         let activeCondition = 'all';
         let searchQuery = '';
         let activeSort = 'featured';
 
-        // Cache Containers
         const productGridContainer = document.getElementById('productGridContainer');
-        const totalUnitCount = document.getElementById('totalUnitCount');
         const liveSearchInput = document.getElementById('liveSearchInput');
         const toastElement = document.getElementById('toastElement');
         const toastText = document.getElementById('toastText');
 
-        // Render Live Products
         function renderShowroomProducts() {
             let filtered = showroomInventory.filter(item => {
                 const matchesCat = (activeCategory === 'all') || (item.category === activeCategory);
@@ -2248,13 +2257,8 @@
                 return matchesCat && matchesCond && matchesSearch;
             });
 
-            // Sorting logic
             if (activeSort === 'discount') {
-                filtered.sort((a, b) => {
-                    const pctA = (a.msrp - a.outletPrice) / a.msrp;
-                    const pctB = (b.msrp - b.outletPrice) / b.msrp;
-                    return pctB - pctA;
-                });
+                filtered.sort((a, b) => ((b.msrp - b.outletPrice) / b.msrp) - ((a.msrp - a.outletPrice) / a.msrp));
             } else if (activeSort === 'price-asc') {
                 filtered.sort((a, b) => a.outletPrice - b.outletPrice);
             } else if (activeSort === 'price-desc') {
@@ -2264,13 +2268,9 @@
             if (filtered.length === 0) {
                 productGridContainer.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; padding: 64px 20px; background: #ffffff; border-radius: var(--radius-lg); border: 1px dashed var(--color-border);">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.6" style="margin: 0 auto 12px; display: block;">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
                         <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-brand-navy); margin-bottom: 6px;">No exact units currently match your criteria</h4>
                         <p style="color: var(--color-text-muted); font-size: 0.9rem; max-width: 440px; margin: 0 auto 18px;">
-                            We receive new liquidation truckloads every Tuesday and Thursday. Clear your search or contact our floor desk.
+                            Call 910-224-6282 or visit our showroom at 3621 Sycamore Dairy Rd, Fayetteville NC!
                         </p>
                         <button class="btn-hero-primary" onclick="resetAllFilters()">Reset All Filters</button>
                     </div>
@@ -2302,6 +2302,11 @@
 
                             <h3 class="product-title">${escapeHtml(item.title)}</h3>
                             <span class="product-model-code">SKU: ${escapeHtml(item.id)} | Model: ${escapeHtml(item.model)}</span>
+
+                            <div style="font-size: 0.76rem; color: #047857; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 4px;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                ${item.warrantyDesc}
+                            </div>
 
                             <ul class="feature-bullets">
                                 ${item.specs.slice(0, 2).map(s => `
@@ -2337,7 +2342,6 @@
             }).join('');
         }
 
-        // Sanitizer
         function escapeHtml(str) {
             if (!str) return '';
             return String(str)
@@ -2348,7 +2352,6 @@
                 .replace(/'/g, '&#039;');
         }
 
-        // Category Filter Handling
         document.getElementById('categoryPills').addEventListener('click', (e) => {
             const btn = e.target.closest('.pill-btn');
             if (btn) {
@@ -2368,7 +2371,6 @@
             renderShowroomProducts();
         }
 
-        // Condition Filter Handling
         function filterByCondition(condition, btnElement) {
             activeCondition = condition;
             document.querySelectorAll('.condition-filter-pill').forEach(b => b.classList.remove('active'));
@@ -2376,19 +2378,16 @@
             renderShowroomProducts();
         }
 
-        // Live Search Handler
         liveSearchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value.trim();
             renderShowroomProducts();
         });
 
-        // Sort Handler
         function handleSortSelect(val) {
             activeSort = val;
             renderShowroomProducts();
         }
 
-        // Reset Filters
         function resetAllFilters() {
             activeCategory = 'all';
             activeCondition = 'all';
@@ -2401,7 +2400,6 @@
             renderShowroomProducts();
         }
 
-        // Smooth Scroll Helper
         function scrollToElement(id) {
             const target = document.getElementById(id);
             if (target) {
@@ -2409,7 +2407,6 @@
             }
         }
 
-        // Modal: Cosmetic Grading
         function openGradingModal() {
             document.getElementById('gradingModalOverlay').classList.add('active');
         }
@@ -2417,7 +2414,6 @@
             document.getElementById('gradingModalOverlay').classList.remove('active');
         }
 
-        // Modal: Product Detail Quick-View
         function openDetailModal(id) {
             const item = showroomInventory.find(x => x.id === id);
             if (!item) return;
@@ -2431,8 +2427,12 @@
                     <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent-emerald);">● ${item.inStock} Units Available</span>
                 </div>
                 <h3 style="font-size: 1.35rem; line-height: 1.3; margin-bottom: 4px;">${escapeHtml(item.title)}</h3>
-                <div style="font-size: 0.78rem; color: var(--color-text-subtle); font-family: monospace; margin-bottom: 16px;">
+                <div style="font-size: 0.78rem; color: var(--color-text-subtle); font-family: monospace; margin-bottom: 12px;">
                     SKU: ${item.id} | MODEL: ${item.model}
+                </div>
+
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 14px; font-size: 0.82rem; color: #166534;">
+                    🛡️ <strong>Warranty:</strong> 7-Day In-Store Guarantee + ${item.brand.includes("GE") ? "1-Year Official GE Manufacturer Warranty" : "1-Year Comprehensive OnPoint Parts & Labor Warranty"}.
                 </div>
 
                 <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
@@ -2482,12 +2482,11 @@
             document.getElementById('detailModalOverlay').classList.remove('active');
         }
 
-        // Modal: Reserve / Hold
         function openReserveModal(id) {
             const item = showroomInventory.find(x => x.id === id);
             if (item) {
                 document.getElementById('holdModalTitle').textContent = `Hold ${item.brand} ${item.model}`;
-                document.getElementById('holdModalSub').textContent = `Outlet Clearance Price: $${item.outletPrice.toLocaleString()} • Free 1-Year Warranty`;
+                document.getElementById('holdModalSub').textContent = `Outlet Clearance Price: $${item.outletPrice.toLocaleString()} • 7-Day In-Store + 1-Year Warranty Included`;
                 document.getElementById('holdProductSku').value = item.id;
             } else {
                 document.getElementById('holdModalTitle').textContent = 'Hold Showroom Appliance';
@@ -2501,14 +2500,12 @@
             document.getElementById('reserveModalOverlay').classList.remove('active');
         }
 
-        // Modal Outside Click Dismiss
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal-overlay')) {
                 e.target.classList.remove('active');
             }
         });
 
-        // Form: Reservation Submit
         function handleReserveSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('resName').value;
@@ -2518,15 +2515,13 @@
             e.target.reset();
         }
 
-        // Form: General Availability Inquiry
         function handleGeneralInquiry(e) {
             e.preventDefault();
             const name = document.getElementById('formName').value;
-            triggerToast(`Thank you ${name}! Our floor specialist is gathering photos for you now.`);
+            triggerToast(`Thank you ${name}! Call us anytime at 910-224-6282.`);
             e.target.reset();
         }
 
-        // Interactive FAQ Accordion
         function toggleFaq(btn) {
             const item = btn.parentElement;
             const answer = item.querySelector('.faq-answer');
@@ -2543,7 +2538,6 @@
             }
         }
 
-        // Toast Feedback System
         function triggerToast(message) {
             toastText.textContent = message;
             toastElement.classList.add('show');
@@ -2552,7 +2546,6 @@
             }, 4500);
         }
 
-        // Initialize Catalog on Load
         renderShowroomProducts();
     </script>
 </body>
