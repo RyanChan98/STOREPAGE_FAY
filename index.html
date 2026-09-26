@@ -60,7 +60,6 @@
             font-family: var(--font-body);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
 
@@ -119,7 +118,6 @@
             font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .pulse-dot {
@@ -177,16 +175,6 @@
             width: auto;
             object-fit: contain;
             display: block;
-            transition: var(--transition-smooth);
-        }
-
-        .footer-logo-img {
-            height: 38px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-            margin-bottom: 14px;
-            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85));
         }
 
         .main-nav-links {
@@ -224,13 +212,6 @@
             color: var(--color-brand-navy);
             font-size: 0.88rem;
             font-weight: 700;
-            transition: var(--transition-smooth);
-            border: 1px solid transparent;
-        }
-
-        .phone-badge:hover {
-            background: #e2e8f0;
-            border-color: #cbd5e1;
         }
 
         .phone-badge svg {
@@ -253,7 +234,6 @@
 
         .btn-reserve-nav:hover {
             background: var(--color-brand-primary-hover);
-            transform: translateY(-1px);
         }
 
         .hero-section {
@@ -305,7 +285,6 @@
             font-weight: 700;
             color: #cbd5e1;
             margin-bottom: 20px;
-            backdrop-filter: blur(8px);
         }
 
         .hero-heading {
@@ -355,7 +334,6 @@
 
         .btn-hero-primary:hover {
             background: var(--color-brand-primary-hover);
-            transform: translateY(-2px);
         }
 
         .btn-hero-secondary {
@@ -367,7 +345,6 @@
             font-size: 0.95rem;
             font-weight: 700;
             transition: var(--transition-smooth);
-            backdrop-filter: blur(8px);
         }
 
         .hero-poster-frame {
@@ -395,7 +372,6 @@
             left: 16px;
             right: 16px;
             background: rgba(9, 19, 34, 0.88);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.18);
             padding: 12px 18px;
             border-radius: var(--radius-md);
@@ -423,11 +399,6 @@
             display: flex;
             flex-direction: column;
             transition: var(--transition-smooth);
-        }
-
-        .spotlight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-elevated);
         }
 
         .spotlight-poster-wrap {
@@ -504,10 +475,6 @@
             transition: var(--transition-smooth);
         }
 
-        .btn-spotlight-shop:hover {
-            background: var(--color-brand-primary);
-        }
-
         .trust-strip {
             background: #ffffff;
             border-top: 1px solid var(--color-border);
@@ -538,7 +505,6 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            border: 1px solid #fee2e2;
         }
 
         .trust-content h5 {
@@ -590,7 +556,6 @@
             font-size: 0.85rem;
             font-weight: 700;
             transition: var(--transition-smooth);
-            box-shadow: var(--shadow-subtle);
         }
 
         .btn-grading-guide:hover {
@@ -668,12 +633,6 @@
             font-size: 0.88rem;
             background: #f8fafc;
             outline: none;
-            transition: var(--transition-smooth);
-        }
-
-        .search-box input:focus {
-            border-color: var(--color-brand-primary);
-            background: #ffffff;
         }
 
         .search-box svg {
@@ -840,7 +799,7 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            color: var(--color-accent-emerald);
+            color: #059669;
             font-weight: 700;
         }
 
@@ -848,7 +807,7 @@
             width: 6px;
             height: 6px;
             border-radius: 50%;
-            background: var(--color-accent-emerald);
+            background: #059669;
         }
 
         .product-title {
@@ -919,11 +878,6 @@
             padding: 10px;
             border-radius: var(--radius-sm);
             text-align: center;
-            transition: var(--transition-smooth);
-        }
-
-        .btn-card-hold:hover {
-            background: var(--color-brand-primary-hover);
         }
 
         .btn-card-view {
@@ -935,11 +889,6 @@
             padding: 10px;
             border-radius: var(--radius-sm);
             text-align: center;
-            transition: var(--transition-smooth);
-        }
-
-        .btn-card-view:hover {
-            background: #f1f5f9;
         }
 
         .partners-section {
@@ -1214,7 +1163,7 @@
                 <span>Scratch & Dent • Open Box • Up to 70% Off • 7-Day In-Store Guarantee & 1-Year Warranty Included</span>
             </div>
             <div class="top-strip-links">
-                <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 700; text-decoration: none;">📍 Get Directions (Google Maps)</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 700;">📍 Get Directions (Google Maps)</a>
                 <a onclick="openGradingModal()" style="cursor: pointer;">A4L Condition & Grading Guide</a>
             </div>
         </div>
@@ -1409,7 +1358,7 @@
         </div>
     </div>
 
-    <!-- Catalog Section (完全动态驱动) -->
+    <!-- Catalog Section (核心动态分类区域) -->
     <section class="catalog-section" id="catalog">
         <div class="container">
             <div class="section-header-row">
@@ -1426,7 +1375,7 @@
             <!-- Filter Controls Dock -->
             <div class="filter-dock">
                 <div class="filter-row-top">
-                    <!-- 动态品类标签 -->
+                    <!-- 核心：由 JS 根据表格真实数据动态生成全部品类标签 -->
                     <div class="category-pills" id="dynamicCategoryPills">
                         <button class="pill-btn active" onclick="selectExactType('ALL', this)">All Appliances (<span id="totalUnitCount">...</span>)</button>
                     </div>
@@ -1715,7 +1664,7 @@
             <div class="footer-grid">
                 <div>
                     <a href="#" aria-label="Appliances 4 Less Home">
-                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="footer-logo-img">
+                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 38px; width: auto; object-fit: contain; margin-bottom: 14px; filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85));">
                     </a>
                     <p style="font-size: 0.84rem; line-height: 1.6; margin: 16px 0; color: #64748b;">
                         Appliances 4 Less (Fayetteville) specializes in verified open-box, excess overstock, and scratch & dent premium household appliances at up to 70% off retail prices.
@@ -1761,12 +1710,12 @@
         </div>
     </footer>
 
-    <!-- 动态库存加载与 6 折兜底高容错 JAVASCRIPT -->
+    <!-- 完全根据表格真实数据动态驱动且支持 6 折兜底与高容错的 JAVASCRIPT -->
     <script>
         const GOOGLE_SHEET_ID = '1_KDNRneDDkJ-0EsMC7NmYkmmAU3IR__ADL6cnTUWHK0';
-        const SHEET_NAME_OR_INDEX = 'Sheet1'; 
+        const SHEET_NAME_OR_INDEX = 'Sheet1'; // 准确匹配你底部的实际表名 Sheet1
 
-        // 如果你在 AppSheet 后台有对应的 AppName（如 InventoryApp-1234567），填入这里；若无保持留空
+        // 如果在 AppSheet 后台有对应的 AppName（如 InventoryApp-1234567），填入这里；若无保持留空
         const APPSHEET_APP_NAME = ''; 
 
         let rawInventoryData = [];
@@ -1799,12 +1748,12 @@
                 <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
                     <div class="pulse-dot" style="width: 14px; height: 14px; margin: 0 auto 16px;"></div>
                     <p style="color: var(--color-brand-navy); font-weight: 700; font-size: 1.05rem;">Loading live showroom inventory...</p>
-                    <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Synchronizing floor items...</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Synchronizing 100+ floor items...</p>
                 </div>
             `;
 
             try {
-                // 增加时间戳参数穿透缓存，表格改动后刷新立刻生效
+                // 增加时间戳参数穿透服务端缓存，表格改动后刷新立刻生效
                 const timestamp = Date.now();
                 const fetchUrl = `https://opensheet.elk.sh/${GOOGLE_SHEET_ID}/${encodeURIComponent(SHEET_NAME_OR_INDEX)}?t=${timestamp}`;
 
@@ -1943,6 +1892,7 @@
             renderProducts();
         }
 
+        // 支持导航栏直接联动特定分类
         function filterByExactType(typeName) {
             currentSelectedType = typeName;
             scrollToElement('catalog');
