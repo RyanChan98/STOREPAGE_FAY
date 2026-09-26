@@ -173,16 +173,30 @@
             display: flex;
             align-items: center;
             text-decoration: none;
-            font-family: var(--font-display);
-            font-size: 1.45rem;
-            font-weight: 900;
-            color: var(--color-brand-navy);
-            letter-spacing: -0.03em;
+            cursor: pointer;
         }
 
-        .brand-logo-group span {
-            color: var(--color-brand-primary);
-            margin-left: 4px;
+        /* 导航栏图片 Logo 规范 */
+        .brand-logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .brand-logo-group:hover .brand-logo-img {
+            transform: scale(1.02);
+        }
+
+        /* 页脚深色背景下的图片 Logo 规范 */
+        .footer-logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 14px;
+            filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85));
         }
 
         .main-nav-links {
@@ -1390,19 +1404,6 @@
             color: #64748b;
         }
 
-        .footer-logo-wrap {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-
-        .footer-logo-wrap span {
-            color: var(--color-brand-primary);
-        }
-
         .footer-title {
             color: #ffffff;
             font-size: 0.95rem;
@@ -1483,6 +1484,9 @@
             .top-strip {
                 display: none;
             }
+            .brand-logo-img {
+                height: 34px;
+            }
         }
     </style>
 </head>
@@ -1504,11 +1508,11 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
+    <!-- Main Navigation Bar (使用官方招牌图片 Logo) -->
     <header class="site-header">
         <div class="container nav-wrapper">
             <a href="#" class="brand-logo-group" aria-label="Appliances 4 Less Home">
-                APPLIANCES 4<span> LESS</span>
+                <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="brand-logo-img">
             </a>
 
             <ul class="main-nav-links">
@@ -1683,7 +1687,7 @@
             </div>
             <div class="trust-item">
                 <div class="trust-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
                 </div>
                 <div class="trust-content">
                     <h5>Local Delivery & Haul-Away</h5>
@@ -2017,14 +2021,14 @@
         <span id="toastText">Action completed successfully!</span>
     </div>
 
-    <!-- Site Footer -->
+    <!-- Site Footer (使用官方招牌图片 Logo) -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
-                    <div class="footer-logo-wrap">
-                        APPLIANCES 4 <span>LESS</span>
-                    </div>
+                    <a href="#" aria-label="Appliances 4 Less Home">
+                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="footer-logo-img">
+                    </a>
                     <p>
                         Appliances 4 Less (Fayetteville) specializes in verified open-box, excess overstock, and scratch & dent premium household appliances at up to 70% off retail prices.
                     </p>
