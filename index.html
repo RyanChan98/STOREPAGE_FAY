@@ -1,0 +1,2559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Appliances 4 Less - Authorized major brand outlet. Shop certified open box, scratch & dent, and excess overstock appliances at 30% to 70% off MSRP with free 1-year warranty included.">
+    <title>Appliances 4 Less (A4L) | Luxury Brand Outlets — Up to 70% Off</title>
+
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Official A4L Red & Navy Palette */
+            --color-brand-primary: #dc2626;
+            --color-brand-primary-hover: #b91c1c;
+            --color-brand-blue: #2563eb;
+            --color-brand-navy: #091322;
+            --color-brand-navy-light: #12223c;
+            --color-brand-navy-subtle: #1e355b;
+            --color-accent-amber: #f59e0b;
+            --color-accent-emerald: #059669;
+            --color-surface-bg: #f8fafc;
+            --color-surface-card: #ffffff;
+            --color-text-main: #0f172a;
+            --color-text-muted: #64748b;
+            --color-text-subtle: #94a3b8;
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+
+            /* Typography */
+            --font-display: 'Outfit', -apple-system, sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+            /* Shadows & Elevation */
+            --shadow-subtle: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-elevated: 0 12px 28px -6px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+            --shadow-float: 0 20px 35px -10px rgba(15, 23, 42, 0.18);
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-full: 9999px;
+            --transition-smooth: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-surface-bg);
+            color: var(--color-text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            color: var(--color-brand-navy);
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: var(--font-body);
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Announcement Strip */
+        .top-strip {
+            background: var(--color-brand-navy);
+            color: #e2e8f0;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-strip-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .top-badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(220, 38, 38, 0.22);
+            color: #fecaca;
+            border: 1px solid rgba(220, 38, 38, 0.45);
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-brand-primary);
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(220, 38, 38, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        .top-strip-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.8rem;
+        }
+
+        .top-strip-links span {
+            color: #94a3b8;
+        }
+
+        .top-strip-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* Navigation Header with official logo */
+        header.site-header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            gap: 24px;
+        }
+
+        .brand-logo-group {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .official-brand-logo {
+            height: 38px;
+            width: auto;
+            max-width: 250px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .main-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .main-nav-links a {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            transition: var(--transition-smooth);
+            padding: 6px 0;
+        }
+
+        .main-nav-links a:hover {
+            color: var(--color-brand-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .phone-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            background: #f1f5f9;
+            color: var(--color-brand-navy);
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .phone-badge:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
+        }
+
+        .phone-badge svg {
+            color: var(--color-brand-primary);
+        }
+
+        .btn-reserve-nav {
+            background: var(--color-brand-primary);
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: var(--radius-full);
+            font-size: 0.88rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 14px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-reserve-nav:hover {
+            background: var(--color-brand-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+        }
+
+        /* Hero Banner */
+        .hero-section {
+            background: linear-gradient(135deg, #091322 0%, #12223c 55%, #182e52 100%);
+            color: #ffffff;
+            padding: 60px 0 74px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: -15%;
+            right: 10%;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.28) 0%, rgba(9, 19, 34, 0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 44px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-pill span.tag-highlight {
+            color: #fca5a5;
+        }
+
+        .hero-heading {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.12;
+            margin-bottom: 18px;
+            letter-spacing: -0.035em;
+        }
+
+        .hero-heading .text-gradient {
+            background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            max-width: 540px;
+            line-height: 1.6;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .btn-hero-primary {
+            background: var(--color-brand-primary);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+        }
+
+        .btn-hero-primary:hover {
+            background: var(--color-brand-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(220, 38, 38, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 14px 26px;
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-hero-secondary:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Hero Poster Showcase Image Frame */
+        .hero-poster-frame {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-float);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            background: #000000;
+            aspect-ratio: 1 / 1;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .hero-poster-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-poster-frame:hover .hero-poster-img {
+            transform: scale(1.03);
+        }
+
+        .hero-poster-badge {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: rgba(9, 19, 34, 0.88);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 12px 18px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-poster-badge strong {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .hero-poster-badge span {
+            color: #f87171;
+            font-weight: 800;
+            font-size: 0.88rem;
+        }
+
+        /* Featured Spotlight Promo Banners (p3.jpg and p2.jpg) */
+        .spotlight-section {
+            padding: 56px 0 20px;
+        }
+
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .spotlight-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        .spotlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .spotlight-poster-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-height: 380px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .spotlight-poster-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .spotlight-card:hover .spotlight-poster-img {
+            transform: scale(1.04);
+        }
+
+        .spotlight-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .spotlight-tag {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--color-brand-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+
+        .spotlight-title {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--color-brand-navy);
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        .spotlight-desc {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 18px;
+            line-height: 1.55;
+        }
+
+        .spotlight-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-top: 1px dashed var(--color-border);
+            padding-top: 16px;
+        }
+
+        .spotlight-savings {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--color-brand-primary);
+            font-family: var(--font-display);
+        }
+
+        .btn-spotlight-shop {
+            background: var(--color-brand-navy);
+            color: #ffffff;
+            padding: 9px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-spotlight-shop:hover {
+            background: var(--color-brand-primary);
+        }
+
+        /* Pillars Value Strip */
+        .trust-strip {
+            background: #ffffff;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 24px 0;
+            margin-top: 48px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .trust-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: #fef2f2;
+            color: var(--color-brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid #fee2e2;
+        }
+
+        .trust-content h5 {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--color-brand-navy);
+            margin-bottom: 2px;
+        }
+
+        .trust-content p {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        .catalog-section {
+            padding: 64px 0;
+        }
+
+        .section-header-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section-title-wrap h2 {
+            font-size: 2.1rem;
+            font-weight: 900;
+            color: var(--color-brand-navy);
+            margin-bottom: 6px;
+        }
+
+        .section-title-wrap p {
+            font-size: 0.98rem;
+            color: var(--color-text-muted);
+        }
+
+        .btn-grading-guide {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            color: var(--color-brand-navy);
+            border: 1px solid var(--color-border);
+            padding: 9px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-grading-guide:hover {
+            border-color: var(--color-brand-primary);
+            color: var(--color-brand-primary);
+        }
+
+        /* Filter Controls */
+        .filter-dock {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .filter-row-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .category-pills {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pill-btn {
+            background: #f1f5f9;
+            color: var(--color-text-main);
+            padding: 8px 18px;
+            border-radius: var(--radius-full);
+            font-size: 0.86rem;
+            font-weight: 700;
+            transition: var(--transition-smooth);
+        }
+
+        .pill-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .pill-btn.active {
+            background: var(--color-brand-navy);
+            color: #ffffff;
+        }
+
+        .search-sort-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+            max-width: 440px;
+            justify-content: flex-end;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 9px 16px 9px 38px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--color-border);
+            font-family: var(--font-body);
+            font-size: 0.88rem;
+            background: #f8fafc;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--color-brand-primary);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-subtle);
+            pointer-events: none;
+        }
+
+        .select-sort {
+            background: #f8fafc;
+            border: 1px solid var(--color-border);
+            padding: 9px 14px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-main);
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .select-sort:focus {
+            border-color: var(--color-brand-primary);
+        }
+
+        .filter-row-bottom {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border-light);
+            padding-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .condition-filter-pill {
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--color-border);
+            font-size: 0.78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            background: #ffffff;
+            color: var(--color-text-main);
+        }
+
+        .condition-filter-pill.active {
+            border-color: var(--color-brand-primary);
+            background: #fef2f2;
+            color: var(--color-brand-primary);
+        }
+
+        /* Product Cards Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+            gap: 26px;
+        }
+
+        .product-card {
+            background: var(--color-surface-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-subtle);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-elevated);
+            border-color: #cbd5e1;
+        }
+
+        .product-media-wrap {
+            position: relative;
+            background: #f1f5f9;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .product-appliance-art {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-card:hover .product-appliance-art {
+            transform: scale(1.05);
+        }
+
+        .product-appliance-art svg {
+            width: 90px;
+            height: 90px;
+            color: var(--color-brand-navy-light);
+            filter: drop-shadow(0 8px 12px rgba(15, 23, 42, 0.08));
+        }
+
+        .badge-condition {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .badge-openbox {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+        }
+
+        .badge-scratchdent {
+            background: #fef2f2;
+            color: var(--color-brand-primary);
+            border: 1px solid #fecaca;
+        }
+
+        .badge-overstock {
+            background: #ecfdf5;
+            color: #047857;
+            border: 1px solid #a7f3d0;
+        }
+
+        .badge-discount-percent {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--color-brand-navy);
+            color: #ffffff;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: var(--radius-full);
+        }
+
+        .product-info-wrap {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .brand-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.76rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-muted);
+        }
+
+        .stock-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--color-accent-emerald);
+            font-weight: 700;
+        }
+
+        .stock-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--color-accent-emerald);
+        }
+
+        .product-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--color-brand-navy);
+            line-height: 1.35;
+            margin-bottom: 6px;
+        }
+
+        .product-model-code {
+            font-size: 0.76rem;
+            color: var(--color-text-subtle);
+            font-family: monospace;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .feature-bullets li {
+            font-size: 0.82rem;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bullet-check {
+            color: var(--color-accent-emerald);
+            flex-shrink: 0;
+        }
+
+        .price-section {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px dashed var(--color-border);
+            margin-bottom: 16px;
+        }
+
+        .msrp-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2px;
+        }
+
+        .msrp-line del {
+            color: #94a3b8;
+        }
+
+        .sale-price-line {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+
+        .sale-price {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: var(--color-brand-primary);
+            letter-spacing: -0.03em;
+        }
+
+        .savings-chip {
+            background: #dcfce7;
+            color: #15803d;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+        }
+
+        .card-actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .btn-card-hold {
+            background: var(--color-brand-primary);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .btn-card-hold:hover {
+            background: var(--color-brand-primary-hover);
+        }
+
+        .btn-card-view {
+            background: #f8fafc;
+            color: var(--color-brand-navy);
+            border: 1px solid var(--color-border);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 10px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .btn-card-view:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        /* Financing & Partners Strip */
+        .partners-section {
+            background: #ffffff;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 56px 0;
+        }
+
+        .financing-card-banner {
+            background: linear-gradient(135deg, #091322 0%, #12223c 100%);
+            border-radius: var(--radius-lg);
+            padding: 36px 44px;
+            color: #ffffff;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 36px;
+            align-items: center;
+            box-shadow: var(--shadow-elevated);
+        }
+
+        .financing-info h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .financing-info p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .partner-logos-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .partner-pill {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .finance-calculator-box {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+        }
+
+        .finance-calculator-box h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .finance-calculator-box p {
+            color: #94a3b8;
+            font-size: 0.82rem;
+            margin-bottom: 16px;
+        }
+
+        /* Showroom & Map section */
+        .showroom-section {
+            padding: 72px 0;
+        }
+
+        .showroom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .showroom-details-card {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .showroom-details-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .showroom-intro {
+            color: var(--color-text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 24px;
+        }
+
+        .detail-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .detail-icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            background: #fef2f2;
+            color: var(--color-brand-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .detail-text strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--color-brand-navy);
+            margin-bottom: 2px;
+        }
+
+        .detail-text span {
+            font-size: 0.86rem;
+            color: var(--color-text-muted);
+            line-height: 1.45;
+            display: block;
+        }
+
+        /* In-Store Hold Form */
+        .inquiry-box {
+            background: #ffffff;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            box-shadow: var(--shadow-card);
+        }
+
+        .inquiry-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .inquiry-box p.subtext {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            background: #ffffff;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            border-color: var(--color-brand-primary);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            background: #ffffff;
+            border-top: 1px solid var(--color-border);
+            padding: 68px 0;
+        }
+
+        .faq-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-brand-navy);
+            text-align: left;
+            background: #ffffff;
+        }
+
+        .faq-question:hover {
+            color: var(--color-brand-primary);
+        }
+
+        .faq-question svg {
+            transition: transform 0.25s;
+            color: var(--color-text-subtle);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+            color: var(--color-brand-primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f8fafc;
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .faq-answer-inner {
+            padding: 0 24px 20px 24px;
+        }
+
+        /* Modal Backdrop & Cards */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(9, 19, 34, 0.72);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            max-width: 580px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 32px;
+            box-shadow: var(--shadow-float);
+            transform: translateY(20px) scale(0.98);
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active .modal-content-card {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--color-text-subtle);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-close-btn:hover {
+            background: #f1f5f9;
+            color: var(--color-text-main);
+        }
+
+        .grade-detail-box {
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            margin-bottom: 14px;
+        }
+
+        .grade-detail-box h5 {
+            font-size: 0.98rem;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grade-detail-box p {
+            font-size: 0.84rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* Toast Feedback */
+        .toast-banner {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: var(--color-brand-navy);
+            color: #ffffff;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-float);
+            font-size: 0.88rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 4px solid var(--color-brand-primary);
+            z-index: 1200;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            pointer-events: none;
+        }
+
+        .toast-banner.show {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #060c17;
+            color: #94a3b8;
+            padding: 60px 0 28px;
+            font-size: 0.86rem;
+            border-top: 1px solid #12223c;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand-col p {
+            font-size: 0.84rem;
+            line-height: 1.6;
+            margin: 16px 0;
+            color: #64748b;
+        }
+
+        .footer-logo-wrap {
+            background: #ffffff;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo-wrap img {
+            height: 32px;
+            width: auto;
+            display: block;
+        }
+
+        .footer-title {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom-bar {
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .spotlight-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .financing-card-banner {
+                grid-template-columns: 1fr;
+            }
+            .showroom-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav-links {
+                display: none;
+            }
+            .hero-heading {
+                font-size: 2.3rem;
+            }
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            .filter-row-top {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-sort-wrap {
+                max-width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .top-strip {
+                display: none;
+            }
+            .official-brand-logo {
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Strip -->
+    <div class="top-strip">
+        <div class="container top-strip-inner">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span class="top-badge-live">
+                    <span class="pulse-dot"></span> Official A4L Outlet
+                </span>
+                <span>Scratch & Dent • Open Box • Up to 70% Off MSRP • 1-Year Warranty Included</span>
+            </div>
+            <div class="top-strip-links">
+                <span>Same-Day Local Delivery & Haul-Away</span>
+                <a onclick="openGradingModal()" style="cursor: pointer;">Grading Standard Guide</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar with Official Logo -->
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-logo-group" aria-label="Appliances 4 Less Home">
+                <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="official-brand-logo" onerror="this.src='https://placehold.co/240x40/091322/ffffff?text=APPLIANCES+4+LESS'">
+            </a>
+
+            <ul class="main-nav-links">
+                <li><a href="#catalog" onclick="filterByCategory('all')">Inventory</a></li>
+                <li><a href="#spotlights">Special Promos</a></li>
+                <li><a href="#catalog" onclick="filterByCategory('refrigerators')">Refrigerators</a></li>
+                <li><a href="#catalog" onclick="filterByCategory('laundry')">Washers & Dryers</a></li>
+                <li><a href="#catalog" onclick="filterByCategory('cooking')">Ranges & Ovens</a></li>
+                <li><a href="#financing">Financing</a></li>
+                <li><a href="#showroom">Showroom</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="tel:8004569988" class="phone-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>(800) 456-9988</span>
+                </a>
+                <button class="btn-reserve-nav" onclick="scrollToElement('catalog')">
+                    Hold a Unit
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Featuring p4.jpg) -->
+    <section class="hero-section">
+        <div class="hero-pattern"></div>
+        <div class="hero-glow"></div>
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-pill">
+                    <span class="tag-highlight">★ Direct Factory Clearance</span>
+                    <span>Prices That Won't Break Your Budget!</span>
+                </div>
+                <h1 class="hero-heading">
+                    Luxury Brand Appliances. <br>
+                    <span class="text-gradient">30% to 70% Off</span> Retail.
+                </h1>
+                <p class="hero-desc">
+                    Shop certified open box, floor models, and minor cosmetic scratch & dent refrigerators, washers, dryers, and slide-in ranges from LG, Samsung, GE Profile, and KitchenAid.
+                </p>
+                <div class="hero-cta-group">
+                    <button class="btn-hero-primary" onclick="scrollToElement('catalog')">
+                        Explore Live Floor Deals
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                    <button class="btn-hero-secondary" onclick="scrollToElement('spotlights')">
+                        View Spotlight Deals
+                    </button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px; color: #94a3b8; font-size: 0.82rem; flex-wrap: wrap;">
+                    <span>Clearance authorized for:</span>
+                    <strong style="color: #cbd5e1;">LG</strong> • 
+                    <strong style="color: #cbd5e1;">Samsung</strong> • 
+                    <strong style="color: #cbd5e1;">GE Profile</strong> • 
+                    <strong style="color: #cbd5e1;">Whirlpool</strong> • 
+                    <strong style="color: #cbd5e1;">KitchenAid</strong>
+                </div>
+            </div>
+
+            <!-- Material Asset p4.jpg Showcase Frame -->
+            <div class="hero-poster-frame">
+                <img src="p4.jpg" alt="Appliances 4 Less - Prices That Won't Break Your Budget!" class="hero-poster-img" onerror="this.src='https://placehold.co/600x600/091322/ffffff?text=Prices+That+Won%27t+Break+Your+Budget!'">
+                <div class="hero-poster-badge">
+                    <div>
+                        <strong>Full Kitchen & Laundry Packages</strong>
+                        <div style="font-size: 0.76rem; color: #94a3b8;">100% Tested & Verified</div>
+                    </div>
+                    <span>SAVE UP TO 70%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Material Promo Spotlights (Featuring p3.jpg and p2.jpg) -->
+    <section class="spotlight-section" id="spotlights">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 36px;">
+                <span style="color: var(--color-brand-primary); font-size: 0.82rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Featured Showroom Campaigns</span>
+                <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 4px;">Clearance Department Highlights</h2>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
+                    Direct access to specialized overstock truckloads. Inspect high-definition photos or hold the exact unit online.
+                </p>
+            </div>
+
+            <div class="spotlight-grid">
+                <!-- Promo 1: p3.jpg (Refrigerators Clearance) -->
+                <div class="spotlight-card">
+                    <div class="spotlight-poster-wrap">
+                        <img src="p3.jpg" alt="Refrigerators Clearance - Open-Box Scratch & Dent" class="spotlight-poster-img" onerror="this.src='https://placehold.co/600x600/e11d48/ffffff?text=Refrigerators+Clearance'">
+                    </div>
+                    <div class="spotlight-content">
+                        <div>
+                            <span class="spotlight-tag">French Door & Side-by-Side</span>
+                            <h3 class="spotlight-title">Refrigerators Clearance: Open-Box & Scratch & Dent</h3>
+                            <p class="spotlight-desc">
+                                Premium 3-door & 4-door French door refrigerators with built-in craft ice makers and beverage centers. Minor cosmetic marks on sides only, face panels in mint condition.
+                            </p>
+                        </div>
+                        <div class="spotlight-actions">
+                            <div>
+                                <span style="font-size: 0.75rem; color: var(--color-text-subtle); display: block;">Lowest Prices In Town</span>
+                                <span class="spotlight-savings">Starting at $799</span>
+                            </div>
+                            <button class="btn-spotlight-shop" onclick="filterByCategory('refrigerators')">
+                                Browse Refrigerators
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo 2: p2.jpg (Laundry / Washers) -->
+                <div class="spotlight-card">
+                    <div class="spotlight-poster-wrap">
+                        <img src="p2.jpg" alt="Scratch & Dent, Perfect For Budget Shoppers" class="spotlight-poster-img" onerror="this.src='https://placehold.co/600x600/dc2626/ffffff?text=Scratch+%26+Dent+Laundry'">
+                    </div>
+                    <div class="spotlight-content">
+                        <div>
+                            <span class="spotlight-tag">Washers & Steam Dryers</span>
+                            <h3 class="spotlight-title">Scratch & Dent, Perfect For Budget Shoppers</h3>
+                            <p class="spotlight-desc">
+                                High-efficiency front load and smart impellor top load laundry pairs. Tested on our 38-point mechanical run bench with free 1-year in-store warranty included.
+                            </p>
+                        </div>
+                        <div class="spotlight-actions">
+                            <div>
+                                <span style="font-size: 0.75rem; color: var(--color-text-subtle); display: block;">Save $500 – $1,200 per Pair</span>
+                                <span class="spotlight-savings">Starting at $499</span>
+                            </div>
+                            <button class="btn-spotlight-shop" onclick="filterByCategory('laundry')">
+                                Browse Washers & Dryers
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Pillars Strip -->
+    <div class="trust-strip">
+        <div class="container trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <div class="trust-content">
+                    <h5>38-Point Quality Bench Check</h5>
+                    <p>Compressors, valves & heating elements run-tested.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                </div>
+                <div class="trust-content">
+                    <h5>Local White-Glove Delivery</h5>
+                    <p>Same-day or next-day delivery & old unit haul-away.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="trust-content">
+                    <h5>Unmatched Savings</h5>
+                    <p>Direct volume liquidations save you $500–$1,800+.</p>
+                </div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div class="trust-content">
+                    <h5>1-Year Protection Standard</h5>
+                    <p>Every unit backed by our certified floor technicians.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section" id="catalog">
+        <div class="container">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <h2>Current Floor Inventory</h2>
+                    <p>Serialized units in stock right now. Reserve online for an instant 24-hour showroom hold.</p>
+                </div>
+                <button class="btn-grading-guide" onclick="openGradingModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Understanding Our Grading Scale
+                </button>
+            </div>
+
+            <!-- Filter Controls Dock -->
+            <div class="filter-dock">
+                <div class="filter-row-top">
+                    <div class="category-pills" id="categoryPills">
+                        <button class="pill-btn active" data-cat="all">All Appliances (<span id="totalUnitCount">8</span>)</button>
+                        <button class="pill-btn" data-cat="refrigerators">Refrigerators</button>
+                        <button class="pill-btn" data-cat="laundry">Washers & Dryers</button>
+                        <button class="pill-btn" data-cat="cooking">Ranges & Ovens</button>
+                        <button class="pill-btn" data-cat="dishwashers">Dishwashers</button>
+                    </div>
+
+                    <div class="search-sort-wrap">
+                        <div class="search-box">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                            <input type="text" id="liveSearchInput" placeholder="Search brand, model, feature...">
+                        </div>
+                        <select class="select-sort" id="sortSelect" onchange="handleSortSelect(this.value)">
+                            <option value="featured">Featured Deals</option>
+                            <option value="discount">Highest Savings %</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-row-bottom">
+                    <span style="font-weight: 700; color: var(--color-brand-navy);">Filter Condition:</span>
+                    <button class="condition-filter-pill active" data-condition="all" onclick="filterByCondition('all', this)">All Conditions</button>
+                    <button class="condition-filter-pill" data-condition="openbox" onclick="filterByCondition('openbox', this)">Grade A: Open Box</button>
+                    <button class="condition-filter-pill" data-condition="scratchdent" onclick="filterByCondition('scratchdent', this)">Grade B: Scratch & Dent</button>
+                    <button class="condition-filter-pill" data-condition="overstock" onclick="filterByCondition('overstock', this)">Overstock / Surplus</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Product Grid -->
+            <div class="products-grid" id="productGridContainer">
+                <!-- Javascript will inject cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Financing Banner Strip -->
+    <section class="partners-section" id="financing">
+        <div class="container">
+            <div class="financing-card-banner">
+                <div class="financing-info">
+                    <h3>Flexible No-Credit Financing Available</h3>
+                    <p>
+                        Take home your dream refrigerator or laundry suite today with as little as <strong>$50 initial payment</strong>. Soft credit pulls will never impact your score, and early 90 to 100-day cash buyouts let you save maximum cash.
+                    </p>
+                    <div class="partner-logos-wrap">
+                        <span class="partner-pill">Acima Credit</span>
+                        <span class="partner-pill">Snap! Finance</span>
+                        <span class="partner-pill">Affirm</span>
+                        <span class="partner-pill">Kafene</span>
+                        <span class="partner-pill">Synchrony Bank</span>
+                    </div>
+                </div>
+                <div class="finance-calculator-box">
+                    <h4>Pre-Qualify in 60 Seconds</h4>
+                    <p>Get up to $5,000 spending limit before stepping foot into the store.</p>
+                    <button class="btn-hero-primary" style="width: 100%; justify-content: center;" onclick="triggerToast('Financing pre-qualification portal opening. Ask store representative for prompt SMS link!')">
+                        Apply Now Online
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showroom & Contact Location -->
+    <section class="showroom-section" id="showroom">
+        <div class="container showroom-grid">
+            <div class="showroom-details-card">
+                <div>
+                    <span style="color: var(--color-brand-primary); font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">Direct Walk-Ins Welcome</span>
+                    <h3>Visit Our Local Showroom</h3>
+                    <p class="showroom-intro">Inspect any model inside and out, test mechanical features on our diagnostic power bench, and choose between immediate vehicle pickup or white-glove home delivery.</p>
+
+                    <div class="detail-row">
+                        <div class="detail-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div class="detail-text">
+                            <strong>Showroom Address</strong>
+                            <span>7420 Commercial Outlet Boulevard, Suite 104<br>Retail Plaza (Adjacent to Costco & Home Depot)</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="detail-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <div class="detail-text">
+                            <strong>Operating Hours</strong>
+                            <span>Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: 12:00 PM – 6:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <div class="detail-icon-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div class="detail-text">
+                            <strong>Call or Text Our Floor Specialists</strong>
+                            <span>Main Desk: (800) 456-9988 | Live Photo SMS: (555) 234-5678</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <a href="https://maps.google.com" target="_blank" class="btn-hero-primary" style="padding: 12px 24px; font-size: 0.88rem; display: inline-flex;">
+                        Open Directions in Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- In-Store Hold & Quote Form -->
+            <div class="inquiry-box">
+                <h3>Request Specific Model Check</h3>
+                <p class="subtext">Looking for a specific model, French door width, or color finish? Send us your requirements and our inventory manager will text you live photos within 15 minutes.</p>
+
+                <form onsubmit="handleGeneralInquiry(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="formName">Full Name</label>
+                        <input type="text" id="formName" class="form-control" placeholder="e.g. David Miller" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="formContact">Phone Number (For SMS Photos)</label>
+                        <input type="tel" id="formContact" class="form-control" placeholder="(555) 000-0000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="formAppliance">Appliance Type Needed</label>
+                        <select id="formAppliance" class="form-control">
+                            <option value="refrigerator">Refrigerator (French Door, Side-by-Side)</option>
+                            <option value="washer-dryer">Washer & Dryer Set</option>
+                            <option value="range">Range / Oven (Gas or Electric)</option>
+                            <option value="dishwasher">Dishwasher (Ultra-Quiet Built-in)</option>
+                            <option value="other">Full Kitchen Package</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="formNotes">Notes or Target Budget (Optional)</label>
+                        <input type="text" id="formNotes" class="form-control" placeholder="e.g. Counter depth, under $1,200, stainless steel">
+                    </div>
+
+                    <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center; margin-top: 8px;">
+                        Check Floor Availability & Receive Photos
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section">
+        <div class="container faq-wrapper">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="color: var(--color-brand-primary); font-size: 0.82rem; font-weight: 800; text-transform: uppercase;">Help & Transparency</span>
+                <h2 style="font-size: 2rem; margin-top: 4px;">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-item active">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Where do your appliances come from?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer" style="max-height: 200px;">
+                    <div class="faq-answer-inner">
+                        Our inventory is sourced directly from major manufacturer liquidation programs, retail distribution overstock, and customer freight returns from national big-box stores. Every unit is 100% genuine major brand merchandise.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>What warranty comes with the appliances?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        All appliances purchased at Appliances 4 Less automatically include our complimentary 1-Year In-Store Mechanical Warranty (covering all essential functional parts and labor). You also have the option at checkout to add an extended 2 or 4-year plan through Consumer Priority Service (CPS).
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>How does the free 24-hour item hold work?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Because each scratch-and-dent unit is one-of-a-kind with a unique serial number, clicking "Hold for 24h" lets you lock that exact serial code in our warehouse management system. No credit card is required. You can then come in person, examine the appliance, and decide if you'd like to take it home.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Do you offer delivery and old appliance haul-away?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes! We offer local white-glove delivery within a 35-mile radius of our showroom. Our team can bring the unit inside, hook up basic water lines and dryer cords, and responsibly haul away your old broken appliance for recycling.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cosmetic Grading Scale Modal -->
+    <div class="modal-overlay" id="gradingModalOverlay">
+        <div class="modal-content-card">
+            <button class="modal-close-btn" onclick="closeGradingModal()">&times;</button>
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-brand-primary); text-transform: uppercase;">Honest Inspection Disclosure</span>
+            <h3 style="font-size: 1.45rem; margin: 4px 0 12px;">Appliance Cosmetic Grading Scale</h3>
+            <p style="font-size: 0.86rem; color: var(--color-text-muted); margin-bottom: 20px;">
+                We categorize all floor models into clear condition tiers so there are never surprises. Every single appliance is verified 100% mechanically functional.
+            </p>
+
+            <div class="grade-detail-box" style="border-left: 4px solid #1d4ed8; background: #f8fbff;">
+                <h5 style="color: #1d4ed8;">Grade A: Open Box / Floor Model</h5>
+                <p>Prong or carton damage during transit. The appliance itself has never been used in a residence and shows zero to near-undetectable cosmetic scuffs. Complete with original accessory packs and manuals.</p>
+            </div>
+
+            <div class="grade-detail-box" style="border-left: 4px solid var(--color-brand-primary); background: #fef2f2;">
+                <h5 style="color: var(--color-brand-primary);">Grade B: Minor Scratch & Dent</h5>
+                <p>Superficial side, top, or rear cabinet scuffs that occur in distribution warehouse handling. Front faces and control touchscreens are clean. Perfect for fitted cabinetry where sides are hidden anyway!</p>
+            </div>
+
+            <div class="grade-detail-box" style="border-left: 4px solid #047857; background: #f0fdf4;">
+                <h5 style="color: #047857;">Grade C / Factory Overstock</h5>
+                <p>Excess production lots, discontinued seasonal finishes, or carton clearance units. Mechanically factory-fresh at steep bulk wholesale discounts.</p>
+            </div>
+
+            <button class="btn-hero-primary" style="width: 100%; justify-content: center; margin-top: 12px;" onclick="closeGradingModal()">
+                Understood — Back to Deals
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Quick View & Inspection Modal -->
+    <div class="modal-overlay" id="detailModalOverlay">
+        <div class="modal-content-card">
+            <button class="modal-close-btn" onclick="closeDetailModal()">&times;</button>
+            <div id="detailModalContainer">
+                <!-- Javascript will inject data -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 24-Hour Item Hold Modal -->
+    <div class="modal-overlay" id="reserveModalOverlay">
+        <div class="modal-content-card">
+            <button class="modal-close-btn" onclick="closeReserveModal()">&times;</button>
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-brand-primary); text-transform: uppercase;">Zero-Down Online Hold</span>
+            <h3 style="font-size: 1.4rem; margin: 4px 0 6px;" id="holdModalTitle">Reserve Appliance</h3>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 20px;" id="holdModalSub">
+                Lock this unit's serial number for 24 hours.
+            </p>
+
+            <form onsubmit="handleReserveSubmit(event)">
+                <input type="hidden" id="holdProductSku">
+                
+                <div class="form-group">
+                    <label class="form-label" for="resName">Your Full Name</label>
+                    <input type="text" id="resName" class="form-control" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="resPhone">Mobile Phone (For 24-Hr Hold SMS Voucher)</label>
+                    <input type="tel" id="resPhone" class="form-control" placeholder="(555) 000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="resPreference">Planned Pickup or Delivery</label>
+                    <select id="resPreference" class="form-control">
+                        <option value="pickup">I will inspect & pick up at the showroom</option>
+                        <option value="delivery">I would like a quote for home delivery & hookup</option>
+                    </select>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 18px; font-size: 0.78rem; color: #64748b;">
+                    🛡️ <strong>No payment needed right now.</strong> We will hold this serial number exclusively for 24 hours so you can inspect it in-store before paying.
+                </div>
+
+                <button type="submit" class="btn-hero-primary" style="width: 100%; justify-content: center;">
+                    Confirm Free 24-Hour Hold
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast-banner" id="toastElement">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span id="toastText">Action completed successfully!</span>
+    </div>
+
+    <!-- Site Footer with Official Logo -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <div class="footer-logo-wrap">
+                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" onerror="this.src='https://placehold.co/200x32/ffffff/091322?text=A4L+OUTLET'">
+                    </div>
+                    <p>
+                        Appliances 4 Less is an authorized retail liquidation outlet specializing in open-box, excess overstock, and scratch & dent premium household appliances at 30% to 70% below retail MSRP.
+                    </p>
+                    <div style="font-weight: 800; color: #ffffff; font-size: 0.95rem;">
+                        Floor Inquiries: (800) 456-9988
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Major Appliance Outlets</h4>
+                    <ul class="footer-links">
+                        <li><a href="#catalog" onclick="filterByCategory('refrigerators')">French Door Refrigerators</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('laundry')">Front & Top Load Washers</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('laundry')">Electric & Gas Dryers</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('cooking')">Slide-In Ranges & Cooktops</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('dishwashers')">Built-In Smart Dishwashers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Customer Assurance</h4>
+                    <ul class="footer-links">
+                        <li><a onclick="openGradingModal()" style="cursor: pointer;">Cosmetic Grading Criteria</a></li>
+                        <li><a href="#financing">1-Year Standard Warranty</a></li>
+                        <li><a href="#financing">Extended CPS Protection Plan</a></li>
+                        <li><a href="#financing">Acima & Snap Financing Terms</a></li>
+                        <li><a href="#showroom">Delivery & Installation Policies</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Showroom Hours</h4>
+                    <p style="font-size: 0.84rem; line-height: 1.8; color: #94a3b8;">
+                        Mon – Sat: 10:00 AM – 7:00 PM<br>
+                        Sun: 12:00 PM – 6:00 PM<br>
+                        <span style="color: #60a5fa;">Same-day pickup available until 6:30 PM.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <div>© 2026 Appliances 4 Less (A4L) Outlet Inc. All Rights Reserved.</div>
+                <div>Official Outlet Partner for LG, Samsung, GE Profile, Whirlpool, KitchenAid, and Bosch.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // High-Fidelity In-Memory Inventory Data
+        const showroomInventory = [
+            {
+                id: "A4L-9041",
+                category: "refrigerators",
+                conditionType: "openbox",
+                conditionLabel: "Grade A: Open Box",
+                conditionClass: "badge-openbox",
+                brand: "LG Electronics",
+                model: "LRMVS3006S",
+                title: "LG 30 cu. ft. Smart Wi-Fi French Door Refrigerator with Craft Ice™",
+                inspectionNotes: "Mint showroom display condition. Unboxed for display only. Dual ice makers fully benchmark tested.",
+                specs: ["Craft Ice™ Maker (Spherical Ice)", "Door-in-Door® with ColdSaver™", "ThinQ® Wi-Fi Smart Enabled"],
+                dimensions: '35.75" W x 70.25" H x 38.12" D',
+                msrp: 3799,
+                outletPrice: 1699,
+                inStock: 2,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="12" y1="2" x2="12" y2="10"/><line x1="9" y1="5" x2="9" y2="7"/><line x1="15" y1="5" x2="15" y2="7"/><rect x="7" y="14" width="10" height="4" rx="1"/></svg>`
+            },
+            {
+                id: "A4L-8820",
+                category: "laundry",
+                conditionType: "scratchdent",
+                conditionLabel: "Grade B: Scratch & Dent",
+                conditionClass: "badge-scratchdent",
+                brand: "Samsung",
+                model: "WF45B6300AC",
+                title: "Samsung 4.5 cu. ft. Smart Front Load Washer with Super Speed Wash",
+                inspectionNotes: "Superficial 1-inch scuff on right side enclosure. Front glass door and digital touch bezel are 100% spotless.",
+                specs: ["Super Speed 28-min complete wash", "Steam Sanitize+ eliminates 99% bacteria", "Vibration Reduction Technology+"],
+                dimensions: '27.0" W x 38.7" H x 31.3" D',
+                msrp: 1149,
+                outletPrice: 599,
+                inStock: 3,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="2.5"/><circle cx="8" cy="6" r="1"/><circle cx="11" cy="6" r="1"/><line x1="15" y1="6" x2="18" y2="6"/></svg>`
+            },
+            {
+                id: "A4L-7419",
+                category: "cooking",
+                conditionType: "overstock",
+                conditionLabel: "Overstock / Surplus",
+                conditionClass: "badge-overstock",
+                brand: "GE Profile",
+                model: "PGS930YPFS",
+                title: "GE Profile 30\" Smart Slide-In Gas Range with No-Preheat Air Fry",
+                inspectionNotes: "Brand new warehouse excess unit. Original protective film still intact on cooktop and stainless backsplash.",
+                specs: ["Built-in No Preheat Air Fry", "21,000 BTU Tri-Ring Power Burner", "Edge-to-Edge Heavy Cast Grates"],
+                dimensions: '30.0" W x 36.25" H x 29.25" D',
+                msrp: 2699,
+                outletPrice: 1289,
+                inStock: 1,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="4" y1="9" x2="20" y2="9"/><circle cx="8" cy="6" r="1.5"/><circle cx="12" cy="6" r="1.5"/><circle cx="16" cy="6" r="1.5"/><rect x="7" y="12" width="10" height="6" rx="1"/></svg>`
+            },
+            {
+                id: "A4L-6512",
+                category: "dishwashers",
+                conditionType: "openbox",
+                conditionLabel: "Grade A: Open Box",
+                conditionClass: "badge-openbox",
+                brand: "KitchenAid",
+                model: "KDTE204KPS",
+                title: "KitchenAid 39 dBA Ultra-Quiet Top Control Dishwasher with 3rd Rack",
+                inspectionNotes: "Direct store return from cabinetry mismatch. Full water cycle tested, sanitized, and re-bagged.",
+                specs: ["Whisper-Quiet 39 dBA Sound Rating", "FreeFlex™ 3rd Rack with Rotating Jets", "PrintShield™ Stainless Finish"],
+                dimensions: '23.88" W x 34.5" H x 24.5" D',
+                msrp: 1299,
+                outletPrice: 649,
+                inStock: 4,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2.5"/><line x1="3" y1="9" x2="21" y2="9"/><rect x="8" y="5.5" width="8" height="1.5" rx="0.5"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`
+            },
+            {
+                id: "A4L-9118",
+                category: "refrigerators",
+                conditionType: "scratchdent",
+                conditionLabel: "Grade B: Scratch & Dent",
+                conditionClass: "badge-scratchdent",
+                brand: "Samsung",
+                model: "RF29A9671SR",
+                title: "Samsung 29 cu. ft. 4-Door Flex™ Refrigerator with Beverage Center™",
+                inspectionNotes: "Small bottom drawer corner dent; unnoticeable from standing view. Features dual auto ice maker and auto-fill pitcher.",
+                specs: ["AutoFill Water Pitcher Inside", "Dual Ice Maker (Cubed & Ice Bites)", "FlexZone™ Convertible Compartment"],
+                dimensions: '35.75" W x 73.0" H x 34.25" D',
+                msrp: 3499,
+                outletPrice: 1549,
+                inStock: 2,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="12" y1="2" x2="12" y2="12"/><line x1="9" y1="6" x2="9" y2="8"/><line x1="15" y1="6" x2="15" y2="8"/><line x1="12" y1="12" x2="12" y2="22"/></svg>`
+            },
+            {
+                id: "A4L-8390",
+                category: "laundry",
+                conditionType: "overstock",
+                conditionLabel: "Overstock / Surplus",
+                conditionClass: "badge-overstock",
+                brand: "LG Electronics",
+                model: "DLEX4000W",
+                title: "LG 7.4 cu. ft. Ultra Large Smart Electric Dryer with TurboSteam™",
+                inspectionNotes: "Factory unboxed allocation. Flawless white enamel finish, heavy-duty drum, and electronic touch control.",
+                specs: ["TurboSteam™ Technology reduces wrinkles", "AI Sensor Dry automatically adjusts time", "FlowSense™ Duct Clogging Indicator"],
+                dimensions: '27.0" W x 38.7" H x 30.0" D',
+                msrp: 1199,
+                outletPrice: 580,
+                inStock: 2,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2.5"/><circle cx="12" cy="13" r="5.5"/><circle cx="12" cy="6" r="1.2"/><line x1="16" y1="6" x2="18" y2="6"/></svg>`
+            },
+            {
+                id: "A4L-7201",
+                category: "cooking",
+                conditionType: "scratchdent",
+                conditionLabel: "Grade B: Scratch & Dent",
+                conditionClass: "badge-scratchdent",
+                brand: "Whirlpool",
+                model: "WFE525S0JZ",
+                title: "Whirlpool 5.3 cu. ft. 5-Element Freestanding Electric Range with Frozen Bake",
+                inspectionNotes: "Light hairline rub mark on side flange from uncrating. Ceramic glass cooktop is scratch-free.",
+                specs: ["FlexHeat™ Dual Radiant Element", "Frozen Bake™ Technology (Skip preheating)", "Warm Zone Keep-Warm burner"],
+                dimensions: '29.88" W x 47.88" H x 27.75" D',
+                msrp: 1049,
+                outletPrice: 520,
+                inStock: 3,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><rect x="6" y="5" width="12" height="3" rx="1"/><circle cx="8" cy="12" r="1.5"/><circle cx="16" cy="12" r="1.5"/><circle cx="12" cy="15" r="1.5"/></svg>`
+            },
+            {
+                id: "A4L-6110",
+                category: "dishwashers",
+                conditionType: "openbox",
+                conditionLabel: "Grade A: Open Box",
+                conditionClass: "badge-openbox",
+                brand: "Bosch",
+                model: "SHP865ZD5N",
+                title: "Bosch 500 Series 24\" Built-In Pocket Handle Dishwasher with AutoAir®",
+                inspectionNotes: "Customer return within 48h due to electrical line spec. Certified sanitized and bench-tested.",
+                specs: ["AutoAir® Door Pop-Open Drying", "Remarkable 44 dBA sound dampening", "Flexible 3rd Rack with fold-down tines"],
+                dimensions: '23.56" W x 33.88" H x 23.75" D',
+                msrp: 1199,
+                outletPrice: 699,
+                inStock: 1,
+                svgIcon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2.5"/><line x1="3" y1="8" x2="21" y2="8"/><rect x="9" y="5" width="6" height="1.5" rx="0.5"/></svg>`
+            }
+        ];
+
+        // Active State Filters
+        let activeCategory = 'all';
+        let activeCondition = 'all';
+        let searchQuery = '';
+        let activeSort = 'featured';
+
+        // Cache Containers
+        const productGridContainer = document.getElementById('productGridContainer');
+        const totalUnitCount = document.getElementById('totalUnitCount');
+        const liveSearchInput = document.getElementById('liveSearchInput');
+        const toastElement = document.getElementById('toastElement');
+        const toastText = document.getElementById('toastText');
+
+        // Render Live Products
+        function renderShowroomProducts() {
+            let filtered = showroomInventory.filter(item => {
+                const matchesCat = (activeCategory === 'all') || (item.category === activeCategory);
+                const matchesCond = (activeCondition === 'all') || (item.conditionType === activeCondition);
+                const q = searchQuery.toLowerCase();
+                const matchesSearch = item.title.toLowerCase().includes(q) ||
+                                      item.brand.toLowerCase().includes(q) ||
+                                      item.model.toLowerCase().includes(q) ||
+                                      item.id.toLowerCase().includes(q) ||
+                                      item.specs.some(s => s.toLowerCase().includes(q));
+
+                return matchesCat && matchesCond && matchesSearch;
+            });
+
+            // Sorting logic
+            if (activeSort === 'discount') {
+                filtered.sort((a, b) => {
+                    const pctA = (a.msrp - a.outletPrice) / a.msrp;
+                    const pctB = (b.msrp - b.outletPrice) / b.msrp;
+                    return pctB - pctA;
+                });
+            } else if (activeSort === 'price-asc') {
+                filtered.sort((a, b) => a.outletPrice - b.outletPrice);
+            } else if (activeSort === 'price-desc') {
+                filtered.sort((a, b) => b.outletPrice - a.outletPrice);
+            }
+
+            if (filtered.length === 0) {
+                productGridContainer.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 64px 20px; background: #ffffff; border-radius: var(--radius-lg); border: 1px dashed var(--color-border);">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.6" style="margin: 0 auto 12px; display: block;">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-brand-navy); margin-bottom: 6px;">No exact units currently match your criteria</h4>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; max-width: 440px; margin: 0 auto 18px;">
+                            We receive new liquidation truckloads every Tuesday and Thursday. Clear your search or contact our floor desk.
+                        </p>
+                        <button class="btn-hero-primary" onclick="resetAllFilters()">Reset All Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            productGridContainer.innerHTML = filtered.map(item => {
+                const dollarSavings = item.msrp - item.outletPrice;
+                const percentSavings = Math.round((dollarSavings / item.msrp) * 100);
+
+                return `
+                    <article class="product-card">
+                        <div class="product-media-wrap">
+                            <span class="badge-condition ${item.conditionClass}">${item.conditionLabel}</span>
+                            <span class="badge-discount-percent">${percentSavings}% OFF</span>
+                            <div class="product-appliance-art">
+                                ${item.svgIcon}
+                            </div>
+                        </div>
+
+                        <div class="product-info-wrap">
+                            <div class="brand-meta-row">
+                                <span>${escapeHtml(item.brand)}</span>
+                                <span class="stock-indicator">
+                                    <span class="stock-dot"></span> ${item.inStock} In Showroom
+                                </span>
+                            </div>
+
+                            <h3 class="product-title">${escapeHtml(item.title)}</h3>
+                            <span class="product-model-code">SKU: ${escapeHtml(item.id)} | Model: ${escapeHtml(item.model)}</span>
+
+                            <ul class="feature-bullets">
+                                ${item.specs.slice(0, 2).map(s => `
+                                    <li>
+                                        <svg class="bullet-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        <span>${escapeHtml(s)}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+
+                            <div class="price-section">
+                                <div class="msrp-line">
+                                    <span>Original MSRP:</span>
+                                    <del>$${item.msrp.toLocaleString()}</del>
+                                </div>
+                                <div class="sale-price-line">
+                                    <div class="sale-price">$${item.outletPrice.toLocaleString()}</div>
+                                    <span class="savings-chip">Save $${dollarSavings.toLocaleString()}</span>
+                                </div>
+                            </div>
+
+                            <div class="card-actions-grid">
+                                <button class="btn-card-hold" onclick="openReserveModal('${item.id}')">
+                                    Hold for 24h
+                                </button>
+                                <button class="btn-card-view" onclick="openDetailModal('${item.id}')">
+                                    Details
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Sanitizer
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // Category Filter Handling
+        document.getElementById('categoryPills').addEventListener('click', (e) => {
+            const btn = e.target.closest('.pill-btn');
+            if (btn) {
+                document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeCategory = btn.dataset.cat;
+                renderShowroomProducts();
+            }
+        });
+
+        function filterByCategory(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.pill-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.cat === cat);
+            });
+            scrollToElement('catalog');
+            renderShowroomProducts();
+        }
+
+        // Condition Filter Handling
+        function filterByCondition(condition, btnElement) {
+            activeCondition = condition;
+            document.querySelectorAll('.condition-filter-pill').forEach(b => b.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+            renderShowroomProducts();
+        }
+
+        // Live Search Handler
+        liveSearchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim();
+            renderShowroomProducts();
+        });
+
+        // Sort Handler
+        function handleSortSelect(val) {
+            activeSort = val;
+            renderShowroomProducts();
+        }
+
+        // Reset Filters
+        function resetAllFilters() {
+            activeCategory = 'all';
+            activeCondition = 'all';
+            searchQuery = '';
+            activeSort = 'featured';
+            liveSearchInput.value = '';
+            document.getElementById('sortSelect').value = 'featured';
+            document.querySelectorAll('.pill-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === 'all'));
+            document.querySelectorAll('.condition-filter-pill').forEach(b => b.classList.toggle('active', b.dataset.condition === 'all'));
+            renderShowroomProducts();
+        }
+
+        // Smooth Scroll Helper
+        function scrollToElement(id) {
+            const target = document.getElementById(id);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Modal: Cosmetic Grading
+        function openGradingModal() {
+            document.getElementById('gradingModalOverlay').classList.add('active');
+        }
+        function closeGradingModal() {
+            document.getElementById('gradingModalOverlay').classList.remove('active');
+        }
+
+        // Modal: Product Detail Quick-View
+        function openDetailModal(id) {
+            const item = showroomInventory.find(x => x.id === id);
+            if (!item) return;
+
+            const savings = item.msrp - item.outletPrice;
+            const pct = Math.round((savings / item.msrp) * 100);
+
+            const detailHtml = `
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <span class="badge-condition ${item.conditionClass}" style="position: static;">${item.conditionLabel}</span>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent-emerald);">● ${item.inStock} Units Available</span>
+                </div>
+                <h3 style="font-size: 1.35rem; line-height: 1.3; margin-bottom: 4px;">${escapeHtml(item.title)}</h3>
+                <div style="font-size: 0.78rem; color: var(--color-text-subtle); font-family: monospace; margin-bottom: 16px;">
+                    SKU: ${item.id} | MODEL: ${item.model}
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
+                    <strong style="font-size: 0.84rem; color: var(--color-brand-navy); display: block; margin-bottom: 4px;">Cosmetic & Bench Inspection Notes:</strong>
+                    <p style="font-size: 0.82rem; color: #475569; line-height: 1.5;">${escapeHtml(item.inspectionNotes)}</p>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <strong style="font-size: 0.84rem; color: var(--color-brand-navy); display: block; margin-bottom: 6px;">Specifications & Dimensions:</strong>
+                    <ul class="feature-bullets" style="margin-bottom: 8px;">
+                        ${item.specs.map(s => `
+                            <li>
+                                <svg class="bullet-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>${escapeHtml(s)}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <span style="font-size: 0.8rem; color: var(--color-text-muted);">Cabinet Dimensions: <strong>${item.dimensions}</strong></span>
+                </div>
+
+                <div class="price-section" style="margin-bottom: 20px;">
+                    <div class="msrp-line">
+                        <span>Original MSRP:</span>
+                        <del>$${item.msrp.toLocaleString()}</del>
+                    </div>
+                    <div class="sale-price-line">
+                        <div class="sale-price">$${item.outletPrice.toLocaleString()}</div>
+                        <span class="savings-chip">Save $${savings.toLocaleString()} (${pct}% Off)</span>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 10px;">
+                    <button class="btn-card-hold" style="padding: 12px;" onclick="closeDetailModal(); openReserveModal('${item.id}');">
+                        Hold This Unit for 24h
+                    </button>
+                    <button class="btn-card-view" style="padding: 12px;" onclick="closeDetailModal()">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('detailModalContainer').innerHTML = detailHtml;
+            document.getElementById('detailModalOverlay').classList.add('active');
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModalOverlay').classList.remove('active');
+        }
+
+        // Modal: Reserve / Hold
+        function openReserveModal(id) {
+            const item = showroomInventory.find(x => x.id === id);
+            if (item) {
+                document.getElementById('holdModalTitle').textContent = `Hold ${item.brand} ${item.model}`;
+                document.getElementById('holdModalSub').textContent = `Outlet Clearance Price: $${item.outletPrice.toLocaleString()} • Free 1-Year Warranty`;
+                document.getElementById('holdProductSku').value = item.id;
+            } else {
+                document.getElementById('holdModalTitle').textContent = 'Hold Showroom Appliance';
+                document.getElementById('holdModalSub').textContent = 'Hold a serial number for 24 hours with zero down payment.';
+                document.getElementById('holdProductSku').value = '';
+            }
+            document.getElementById('reserveModalOverlay').classList.add('active');
+        }
+
+        function closeReserveModal() {
+            document.getElementById('reserveModalOverlay').classList.remove('active');
+        }
+
+        // Modal Outside Click Dismiss
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                e.target.classList.remove('active');
+            }
+        });
+
+        // Form: Reservation Submit
+        function handleReserveSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('resName').value;
+            const phone = document.getElementById('resPhone').value;
+            closeReserveModal();
+            triggerToast(`24-Hour Hold Confirmed for ${name}! Voucher sent to ${phone}.`);
+            e.target.reset();
+        }
+
+        // Form: General Availability Inquiry
+        function handleGeneralInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            triggerToast(`Thank you ${name}! Our floor specialist is gathering photos for you now.`);
+            e.target.reset();
+        }
+
+        // Interactive FAQ Accordion
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const isActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        }
+
+        // Toast Feedback System
+        function triggerToast(message) {
+            toastText.textContent = message;
+            toastElement.classList.add('show');
+            setTimeout(() => {
+                toastElement.classList.remove('show');
+            }, 4500);
+        }
+
+        // Initialize Catalog on Load
+        renderShowroomProducts();
+    </script>
+</body>
+</html>
