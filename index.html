@@ -1754,7 +1754,7 @@
 
                         // 改价逻辑：绝对优先取 App 填入的 Sale Price
                         let rawSale = Number(String(row['Sale Price'] || '').replace(/[^0-9.]/g, ''));
-                        let outletPrice = (rawSale && rawSale > 0) ? rawSale : Math.round(msrp * 0.45);
+                        let outletPrice = (rawSale && rawSale > 0) ? rawSale : Math.round(msrp * 0.6);
 
                         // 图片：优先展示 App 拍照链接，无图时智能匹配品类宣传图
                         const rawImg = (row['Image'] || '').toString().trim();
