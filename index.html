@@ -50,7 +50,6 @@
             padding: 0;
         }
 
-        /* 核心修复 1：严格锁定视口，防止整页左右晃动 */
         html {
             scroll-behavior: smooth;
             width: 100%;
@@ -155,22 +154,25 @@
             text-decoration: underline;
         }
 
+        /* 顶部导航吸顶 */
         header.site-header {
             background: #ffffff;
             border-bottom: 1px solid var(--color-border);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             transition: var(--transition-smooth);
             width: 100%;
+            box-shadow: var(--shadow-subtle);
         }
 
         .nav-wrapper {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 14px 0;
-            gap: 24px;
+            padding: 12px 0;
+            gap: 20px;
+            width: 100%;
         }
 
         .brand-logo-group {
@@ -181,7 +183,7 @@
         }
 
         .brand-logo-img {
-            height: 42px;
+            height: 40px;
             width: auto;
             object-fit: contain;
             display: block;
@@ -209,7 +211,7 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
         .phone-badge {
@@ -246,16 +248,23 @@
             background: var(--color-brand-primary-hover);
         }
 
+        /* 移动端汉堡包按钮：加大到 44px 触控区 */
         .mobile-hamburger-btn {
             display: none;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: var(--radius-sm);
-            background: #f1f5f9;
+            background: #f8fafc;
+            border: 1px solid var(--color-border);
             color: var(--color-brand-navy);
             cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .mobile-hamburger-btn:active {
+            background: #e2e8f0;
         }
 
         .mobile-drawer-overlay {
@@ -263,7 +272,7 @@
             inset: 0;
             background: rgba(9, 19, 34, 0.65);
             backdrop-filter: blur(4px);
-            z-index: 1050;
+            z-index: 2000;
             opacity: 0;
             visibility: hidden;
             transition: var(--transition-smooth);
@@ -282,7 +291,7 @@
             width: 82%;
             max-width: 320px;
             background: #ffffff;
-            z-index: 1100;
+            z-index: 2100;
             box-shadow: var(--shadow-float);
             padding: 24px;
             display: flex;
@@ -671,7 +680,7 @@
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             flex-wrap: wrap;
             gap: 16px;
             width: 100%;
@@ -709,7 +718,7 @@
             color: var(--color-brand-primary);
         }
 
-        /* 核心修复 2：Filter Dock 全局防撑爆约束 */
+        /* 核心重构：双端自适应过滤器布局 */
         .filter-dock {
             background: #ffffff;
             border: 1px solid var(--color-border);
@@ -718,33 +727,26 @@
             margin-bottom: 28px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
             box-shadow: var(--shadow-subtle);
             width: 100%;
             max-width: 100%;
-            min-width: 0;
-            overflow: hidden;
         }
 
         .filter-row-top {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
             gap: 16px;
             width: 100%;
-            max-width: 100%;
-            min-width: 0;
         }
 
-        /* 桌面端正常 wrap，移动端由媒体查询接管 */
+        /* PC 端胶囊栏 */
         .category-pills {
             display: flex;
             align-items: center;
             gap: 8px;
             flex-wrap: wrap;
-            max-width: 100%;
-            min-width: 0;
         }
 
         .pill-btn {
@@ -770,21 +772,20 @@
             color: #ffffff;
         }
 
+        /* 搜索框与排序框容器 */
         .search-sort-wrap {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             flex: 1;
             max-width: 440px;
             justify-content: flex-end;
-            min-width: 0;
             width: 100%;
         }
 
         .search-box {
             position: relative;
             width: 100%;
-            min-width: 0;
         }
 
         .search-box input {
@@ -823,6 +824,32 @@
             flex-shrink: 0;
         }
 
+        /* 移动端专用的品类下拉菜单（默认在 PC 上隐藏） */
+        .mobile-category-select-wrap {
+            display: none;
+            width: 100%;
+        }
+
+        .select-category-mobile {
+            width: 100%;
+            background: #f1f5f9;
+            border: 1px solid var(--color-border);
+            padding: 11px 16px;
+            border-radius: var(--radius-full);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--color-brand-navy);
+            outline: none;
+            cursor: pointer;
+            min-height: 44px;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg2+xml;utf8,<svg fill='%23091322' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
         .filter-row-bottom {
             display: flex;
             align-items: center;
@@ -833,8 +860,6 @@
             padding-top: 12px;
             flex-wrap: wrap;
             width: 100%;
-            max-width: 100%;
-            min-width: 0;
         }
 
         .condition-filter-pill {
@@ -848,8 +873,7 @@
             background: #ffffff;
             color: var(--color-text-main);
             white-space: nowrap;
-            min-height: 32px;
-            flex-shrink: 0;
+            min-height: 34px;
         }
 
         .condition-filter-pill.active {
@@ -858,13 +882,11 @@
             color: var(--color-brand-primary);
         }
 
-        /* 核心修复 3：商品卡片网格流 */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
             gap: 24px;
             width: 100%;
-            max-width: 100%;
         }
 
         .product-card {
@@ -1233,7 +1255,7 @@
             inset: 0;
             background: rgba(9, 19, 34, 0.72);
             backdrop-filter: blur(4px);
-            z-index: 1200;
+            z-index: 2200;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1292,7 +1314,7 @@
             align-items: center;
             gap: 12px;
             border-left: 4px solid var(--color-brand-primary);
-            z-index: 1300;
+            z-index: 2300;
             transform: translateY(100px);
             opacity: 0;
             transition: var(--transition-smooth);
@@ -1375,7 +1397,7 @@
             width: 100%;
         }
 
-        /* 核心修复 4：移动端专用防撑爆样式 */
+        /* 移动端媒体查询（≤768px）自适应 */
         @media (max-width: 1024px) {
             .hero-grid { grid-template-columns: 1fr; }
             .spotlight-grid { grid-template-columns: 1fr; }
@@ -1391,62 +1413,51 @@
             .main-nav-links { display: none; }
             .phone-badge { display: none; }
             .btn-reserve-nav { display: none; }
+            .top-strip { display: none; }
+
+            /* 显示移动端专属汉堡按钮与底部通栏 */
             .mobile-hamburger-btn { display: flex; }
             .mobile-bottom-bar { display: block; }
-            .top-strip { display: none; }
 
             .hero-heading { font-size: 2.2rem; }
             .hero-desc { font-size: 0.94rem; }
             .trust-grid { grid-template-columns: 1fr; }
 
-            /* 关键点：防止 flex 默认子元素撑爆父级 */
+            /* 核心自适应：隐藏 PC 胶囊栏，显示移动端品类下拉选择框 */
+            .category-pills { display: none !important; }
+            .mobile-category-select-wrap { display: block; margin-bottom: 8px; }
+
             .filter-row-top {
                 flex-direction: column;
                 align-items: stretch;
-                min-width: 0;
-                width: 100%;
+                gap: 8px;
             }
 
             .filter-dock {
                 padding: 14px 12px;
-                min-width: 0;
-                width: 100%;
             }
-
-            /* 分类栏局部横滑，决不允许撑爆整页宽度 */
-            .category-pills {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 6px;
-                scrollbar-width: none;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 0 !important;
-            }
-            .category-pills::-webkit-scrollbar { display: none; }
-
-            .filter-row-bottom {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto !important;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 6px;
-                scrollbar-width: none;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 0 !important;
-            }
-            .filter-row-bottom::-webkit-scrollbar { display: none; }
 
             .search-sort-wrap {
                 max-width: 100%;
                 width: 100%;
-                min-width: 0;
+                display: grid;
+                grid-template-columns: 1.4fr 1fr;
+                gap: 8px;
             }
 
-            /* 商品卡片铺满单列，防止偏向左侧缩小成窄列 */
+            /* 条件筛选胶囊微调自然换行，不再产生横滑 */
+            .filter-row-bottom {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                padding-top: 10px;
+            }
+
+            .condition-filter-pill {
+                padding: 6px 12px;
+                font-size: 0.74rem;
+            }
+
             .products-grid {
                 grid-template-columns: 1fr !important;
                 gap: 20px;
@@ -1487,14 +1498,14 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
+    <!-- Main Navigation Bar（吸顶） -->
     <header class="site-header">
         <div class="container nav-wrapper">
             <a href="#" class="brand-logo-group" aria-label="Appliances 4 Less Home">
                 <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="brand-logo-img">
             </a>
 
-            <!-- 桌面端菜单 -->
+            <!-- 桌面端菜单链接 -->
             <ul class="main-nav-links">
                 <li><a href="#catalog" onclick="filterByExactType('ALL')">Inventory</a></li>
                 <li><a href="#spotlights">Special Deals</a></li>
@@ -1517,9 +1528,9 @@
                     Hold a Unit
                 </button>
 
-                <!-- 手机端汉堡包触发按钮 -->
+                <!-- 移动端汉堡包按钮 -->
                 <button class="mobile-hamburger-btn" onclick="toggleMobileDrawer()" aria-label="Open Mobile Navigation">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
                         <line x1="3" y1="6" x2="21" y2="6"></line>
                         <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -1534,7 +1545,7 @@
         <div class="mobile-drawer-panel" onclick="event.stopPropagation()">
             <div class="mobile-drawer-header">
                 <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 32px; width: auto; object-fit: contain;">
-                <button onclick="toggleMobileDrawer()" style="font-size: 1.6rem; color: var(--color-brand-navy); line-height: 1;">&times;</button>
+                <button onclick="toggleMobileDrawer()" style="font-size: 1.8rem; color: var(--color-brand-navy); line-height: 1;">&times;</button>
             </div>
 
             <ul class="mobile-drawer-links">
@@ -1755,10 +1766,17 @@
                 </button>
             </div>
 
-            <!-- Filter Controls Dock -->
+            <!-- Filter Controls Dock（双端自适应架构） -->
             <div class="filter-dock">
                 <div class="filter-row-top">
-                    <!-- 移动端横向滑动胶囊容器 -->
+                    <!-- 移动端专用品类下拉菜单（取代横滑） -->
+                    <div class="mobile-category-select-wrap">
+                        <select class="select-category-mobile" id="mobileCategorySelect" onchange="selectExactTypeFromDropdown(this.value)">
+                            <option value="ALL">All Appliances</option>
+                        </select>
+                    </div>
+
+                    <!-- PC 端品类胶囊栏 -->
                     <div class="category-pills" id="dynamicCategoryPills">
                         <button class="pill-btn active" onclick="selectExactType('ALL', this)">All Appliances (<span id="totalUnitCount">...</span>)</button>
                     </div>
@@ -2102,11 +2120,9 @@
     </footer>
 
     <script>
-        // Google Sheet 配置
         const GOOGLE_SHEET_ID = '1_KDNRneDDkJ-0EsMC7NmYkmmAU3IR__ADL6cnTUWHK0';
         const SHEET_NAME_OR_INDEX = 'Sheet1';
 
-        // 核心更正：将 AppSheet 表名指定为 INVENTORY
         const APPSHEET_APP_NAME = 'INVENTORY-679180464';
         const APPSHEET_TABLE_NAME = 'INVENTORY';
 
@@ -2118,6 +2134,7 @@
 
         const productGridContainer = document.getElementById('productGridContainer');
         const dynamicCategoryPills = document.getElementById('dynamicCategoryPills');
+        const mobileCategorySelect = document.getElementById('mobileCategorySelect');
         const liveSearchInput = document.getElementById('liveSearchInput');
         const toastElement = document.getElementById('toastElement');
         const toastText = document.getElementById('toastText');
@@ -2235,6 +2252,7 @@
             }
         }
 
+        // 双端自适应：同时构建 PC 胶囊栏与手机端下拉菜单
         function buildDynamicCategoryFilters() {
             const typeCounts = {};
             rawInventoryData.forEach(item => {
@@ -2243,41 +2261,72 @@
 
             const allTypes = Object.keys(typeCounts);
 
-            let html = `
+            // 1. PC 胶囊栏
+            let pcHtml = `
                 <button class="pill-btn ${currentSelectedType === 'ALL' ? 'active' : ''}" onclick="selectExactType('ALL', this)">
                     All Appliances (${rawInventoryData.length})
                 </button>
             `;
-
             allTypes.forEach(typeName => {
                 const count = typeCounts[typeName];
                 const isActive = (currentSelectedType.toLowerCase() === typeName.toLowerCase()) ? 'active' : '';
-                html += `
+                pcHtml += `
                     <button class="pill-btn ${isActive}" onclick="selectExactType('${typeName}', this)">
                         ${typeName} (${count})
                     </button>
                 `;
             });
+            dynamicCategoryPills.innerHTML = pcHtml;
 
-            dynamicCategoryPills.innerHTML = html;
+            // 2. 移动端下拉菜单
+            let mobileSelectHtml = `<option value="ALL">📦 All Appliances (${rawInventoryData.length})</option>`;
+            allTypes.forEach(typeName => {
+                const count = typeCounts[typeName];
+                const isSelected = (currentSelectedType.toLowerCase() === typeName.toLowerCase()) ? 'selected' : '';
+                mobileSelectHtml += `<option value="${typeName}" ${isSelected}>${typeName} (${count})</option>`;
+            });
+            mobileCategorySelect.innerHTML = mobileSelectHtml;
         }
 
         function selectExactType(selectedType, btnElement) {
             currentSelectedType = selectedType;
+            // 同步 PC 胶囊样式
             document.querySelectorAll('#dynamicCategoryPills .pill-btn').forEach(btn => btn.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
+
+            // 同步移动端下拉框值
+            if (mobileCategorySelect) {
+                mobileCategorySelect.value = selectedType;
+            }
+
+            renderProducts();
+        }
+
+        function selectExactTypeFromDropdown(selectedType) {
+            currentSelectedType = selectedType;
+            // 同步 PC 胶囊高亮
+            const buttons = document.querySelectorAll('#dynamicCategoryPills .pill-btn');
+            buttons.forEach(btn => {
+                const btnText = btn.textContent.toLowerCase();
+                if (selectedType === 'ALL') {
+                    btn.classList.toggle('active', btnText.includes('all appliances'));
+                } else {
+                    btn.classList.toggle('active', btnText.includes(selectedType.toLowerCase()));
+                }
+            });
+
             renderProducts();
         }
 
         function filterByExactType(typeName) {
             currentSelectedType = typeName;
             scrollToElement('catalog');
-            const buttons = document.querySelectorAll('#dynamicCategoryPills .pill-btn');
-            buttons.forEach(btn => {
-                const btnText = btn.textContent.toLowerCase();
-                btn.classList.toggle('active', btnText.includes(typeName.toLowerCase()));
-            });
-            renderProducts();
+
+            // 同步胶囊与下拉菜单
+            selectExactTypeFromDropdown(typeName);
+            if (mobileCategorySelect) {
+                mobileCategorySelect.value = typeName;
+            }
         }
 
         function filterByCondition(cond, btnElement) {
@@ -2402,6 +2451,7 @@
             currentSort = 'featured';
             liveSearchInput.value = '';
             document.getElementById('sortSelect').value = 'featured';
+            if (mobileCategorySelect) mobileCategorySelect.value = 'ALL';
             document.querySelectorAll('#dynamicCategoryPills .pill-btn').forEach((b, idx) => b.classList.toggle('active', idx === 0));
             document.querySelectorAll('.condition-filter-pill').forEach((b, idx) => b.classList.toggle('active', idx === 0));
             renderProducts();
@@ -2410,7 +2460,7 @@
         function scrollToElement(id) {
             const target = document.getElementById(id);
             if (target) {
-                const headerOffset = 70;
+                const headerOffset = 65;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 window.scrollTo({
