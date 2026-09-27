@@ -170,23 +170,55 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 12px 0;
+            padding: 10px 0;
             gap: 20px;
             width: 100%;
         }
 
+        /* 品牌 Logo 组垂直布局 */
         .brand-logo-group {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             text-decoration: none;
             cursor: pointer;
         }
 
         .brand-logo-img {
-            height: 40px;
+            height: 38px;
             width: auto;
             object-fit: contain;
             display: block;
+        }
+
+        /* 精简版星号 + Fayetteville, NC 徽标 */
+        .local-brand-subbadge {
+            margin-top: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 2px 7px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .local-brand-subbadge svg {
+            flex-shrink: 0;
+        }
+
+        .local-brand-subbadge .badge-text-primary {
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            color: #1e3a8a;
+            font-family: var(--font-display);
+            line-height: 1;
+        }
+
+        .local-brand-subbadge .badge-text-state {
+            color: var(--color-brand-primary);
         }
 
         .main-nav-links {
@@ -248,7 +280,6 @@
             background: var(--color-brand-primary-hover);
         }
 
-        /* 移动端汉堡包按钮：加大到 44px 触控区 */
         .mobile-hamburger-btn {
             display: none;
             align-items: center;
@@ -718,7 +749,6 @@
             color: var(--color-brand-primary);
         }
 
-        /* 核心重构：双端自适应过滤器布局 */
         .filter-dock {
             background: #ffffff;
             border: 1px solid var(--color-border);
@@ -741,7 +771,6 @@
             width: 100%;
         }
 
-        /* PC 端胶囊栏 */
         .category-pills {
             display: flex;
             align-items: center;
@@ -772,7 +801,6 @@
             color: #ffffff;
         }
 
-        /* 搜索框与排序框容器 */
         .search-sort-wrap {
             display: flex;
             align-items: center;
@@ -824,7 +852,6 @@
             flex-shrink: 0;
         }
 
-        /* 移动端专用的品类下拉菜单（默认在 PC 上隐藏） */
         .mobile-category-select-wrap {
             display: none;
             width: 100%;
@@ -845,7 +872,7 @@
             min-height: 44px;
             appearance: none;
             -webkit-appearance: none;
-            background-image: url("data:image/svg2+xml;utf8,<svg fill='%23091322' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23091322' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
             background-repeat: no-repeat;
             background-position: right 14px center;
         }
@@ -1397,7 +1424,6 @@
             width: 100%;
         }
 
-        /* 移动端媒体查询（≤768px）自适应 */
         @media (max-width: 1024px) {
             .hero-grid { grid-template-columns: 1fr; }
             .spotlight-grid { grid-template-columns: 1fr; }
@@ -1415,7 +1441,6 @@
             .btn-reserve-nav { display: none; }
             .top-strip { display: none; }
 
-            /* 显示移动端专属汉堡按钮与底部通栏 */
             .mobile-hamburger-btn { display: flex; }
             .mobile-bottom-bar { display: block; }
 
@@ -1423,7 +1448,6 @@
             .hero-desc { font-size: 0.94rem; }
             .trust-grid { grid-template-columns: 1fr; }
 
-            /* 核心自适应：隐藏 PC 胶囊栏，显示移动端品类下拉选择框 */
             .category-pills { display: none !important; }
             .mobile-category-select-wrap { display: block; margin-bottom: 8px; }
 
@@ -1445,7 +1469,6 @@
                 gap: 8px;
             }
 
-            /* 条件筛选胶囊微调自然换行，不再产生横滑 */
             .filter-row-bottom {
                 display: flex;
                 flex-wrap: wrap;
@@ -1501,9 +1524,18 @@
     <!-- Main Navigation Bar（吸顶） -->
     <header class="site-header">
         <div class="container nav-wrapper">
-            <a href="#" class="brand-logo-group" aria-label="Appliances 4 Less Home">
-                <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="brand-logo-img">
-            </a>
+            <!-- 品牌 Logo 组 (上方为主 Logo，下方仅保留星号 + FAYETTEVILLE, NC) -->
+            <div class="brand-logo-group">
+                <a href="#" aria-label="Appliances 4 Less Home">
+                    <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="brand-logo-img">
+                </a>
+                <div class="local-brand-subbadge">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#1e3a8a">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                    </svg>
+                    <span class="badge-text-primary">FAYETTEVILLE, <span class="badge-text-state">NC</span></span>
+                </div>
+            </div>
 
             <!-- 桌面端菜单链接 -->
             <ul class="main-nav-links">
@@ -1544,7 +1576,15 @@
     <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileDrawer(event)">
         <div class="mobile-drawer-panel" onclick="event.stopPropagation()">
             <div class="mobile-drawer-header">
-                <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 32px; width: auto; object-fit: contain;">
+                <div>
+                    <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 30px; width: auto; object-fit: contain; display: block;">
+                    <div style="font-size: 0.72rem; font-weight: 800; color: #1e3a8a; margin-top: 4px; font-family: var(--font-display); display: flex; align-items: center; gap: 4px;">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="#1e3a8a">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                        FAYETTEVILLE, <span style="color: var(--color-brand-primary);">NC</span>
+                    </div>
+                </div>
                 <button onclick="toggleMobileDrawer()" style="font-size: 1.8rem; color: var(--color-brand-navy); line-height: 1;">&times;</button>
             </div>
 
@@ -1766,10 +1806,10 @@
                 </button>
             </div>
 
-            <!-- Filter Controls Dock（双端自适应架构） -->
+            <!-- Filter Controls Dock -->
             <div class="filter-dock">
                 <div class="filter-row-top">
-                    <!-- 移动端专用品类下拉菜单（取代横滑） -->
+                    <!-- 移动端专用品类下拉菜单 -->
                     <div class="mobile-category-select-wrap">
                         <select class="select-category-mobile" id="mobileCategorySelect" onchange="selectExactTypeFromDropdown(this.value)">
                             <option value="ALL">All Appliances</option>
@@ -2072,10 +2112,20 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
+                    <!-- 页脚 Logo 与配套星号 + FAYETTEVILLE, NC 徽标 -->
                     <a href="#" aria-label="Appliances 4 Less Home">
-                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 38px; width: auto; object-fit: contain; margin-bottom: 14px; filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85));">
+                        <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 38px; width: auto; object-fit: contain; margin-bottom: 6px; filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85)); display: block;">
                     </a>
-                    <p style="font-size: 0.84rem; line-height: 1.6; margin: 16px 0; color: #64748b;">
+                    <div style="margin-bottom: 14px; display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 4px;">
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="#60a5fa">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
+                        <span style="font-size: 0.72rem; font-weight: 800; color: #ffffff; letter-spacing: 0.05em; font-family: var(--font-display); line-height: 1;">
+                            FAYETTEVILLE, <span style="color: #f87171;">NC</span>
+                        </span>
+                    </div>
+
+                    <p style="font-size: 0.84rem; line-height: 1.6; margin-bottom: 16px; color: #64748b;">
                         Appliances 4 Less (Fayetteville) specializes in verified open-box, excess overstock, and scratch & dent premium household appliances at up to 70% off retail prices.
                     </p>
                     <div style="font-weight: 800; color: #ffffff; font-size: 0.95rem; margin-bottom: 6px;">
@@ -2252,7 +2302,6 @@
             }
         }
 
-        // 双端自适应：同时构建 PC 胶囊栏与手机端下拉菜单
         function buildDynamicCategoryFilters() {
             const typeCounts = {};
             rawInventoryData.forEach(item => {
@@ -2261,7 +2310,6 @@
 
             const allTypes = Object.keys(typeCounts);
 
-            // 1. PC 胶囊栏
             let pcHtml = `
                 <button class="pill-btn ${currentSelectedType === 'ALL' ? 'active' : ''}" onclick="selectExactType('ALL', this)">
                     All Appliances (${rawInventoryData.length})
@@ -2278,7 +2326,6 @@
             });
             dynamicCategoryPills.innerHTML = pcHtml;
 
-            // 2. 移动端下拉菜单
             let mobileSelectHtml = `<option value="ALL">📦 All Appliances (${rawInventoryData.length})</option>`;
             allTypes.forEach(typeName => {
                 const count = typeCounts[typeName];
@@ -2290,11 +2337,9 @@
 
         function selectExactType(selectedType, btnElement) {
             currentSelectedType = selectedType;
-            // 同步 PC 胶囊样式
             document.querySelectorAll('#dynamicCategoryPills .pill-btn').forEach(btn => btn.classList.remove('active'));
             if (btnElement) btnElement.classList.add('active');
 
-            // 同步移动端下拉框值
             if (mobileCategorySelect) {
                 mobileCategorySelect.value = selectedType;
             }
@@ -2304,7 +2349,6 @@
 
         function selectExactTypeFromDropdown(selectedType) {
             currentSelectedType = selectedType;
-            // 同步 PC 胶囊高亮
             const buttons = document.querySelectorAll('#dynamicCategoryPills .pill-btn');
             buttons.forEach(btn => {
                 const btnText = btn.textContent.toLowerCase();
@@ -2322,7 +2366,6 @@
             currentSelectedType = typeName;
             scrollToElement('catalog');
 
-            // 同步胶囊与下拉菜单
             selectExactTypeFromDropdown(typeName);
             if (mobileCategorySelect) {
                 mobileCategorySelect.value = typeName;
