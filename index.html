@@ -154,7 +154,6 @@
             text-decoration: underline;
         }
 
-        /* 顶部导航吸顶 */
         header.site-header {
             background: #ffffff;
             border-bottom: 1px solid var(--color-border);
@@ -175,7 +174,6 @@
             width: 100%;
         }
 
-        /* 品牌 Logo 组垂直布局 */
         .brand-logo-group {
             display: flex;
             flex-direction: column;
@@ -191,7 +189,6 @@
             display: block;
         }
 
-        /* 精简版星号 + Fayetteville, NC 徽标 */
         .local-brand-subbadge {
             margin-top: 3px;
             display: inline-flex;
@@ -521,6 +518,7 @@
             font-size: 0.65rem;
             color: #94a3b8;
             margin-top: 1px;
+            font-weight: 700;
         }
 
         .hero-poster-frame {
@@ -968,18 +966,9 @@
             letter-spacing: 0.3px;
             text-transform: uppercase;
             z-index: 2;
-        }
-
-        .badge-openbox {
             background: #eff6ff;
             color: #1d4ed8;
             border: 1px solid #bfdbfe;
-        }
-
-        .badge-scratchdent {
-            background: #fef2f2;
-            color: var(--color-brand-primary);
-            border: 1px solid #fecaca;
         }
 
         .badge-discount-percent {
@@ -1512,7 +1501,7 @@
                 <span class="top-badge-live">
                     <span class="pulse-dot"></span> APPLIANCES 4 LESS
                 </span>
-                <span>Scratch & Dent • Open Box • Up to 70% Off • 7-Day In-Store Guarantee & 1-Year Warranty Included</span>
+                <span>Open Box & Scratch & Dent • Up to 70% Off • 7-Day In-Store Guarantee & 1-Year Warranty Included</span>
             </div>
             <div class="top-strip-links">
                 <a href="https://www.google.com/maps/dir/?api=1&destination=3621+Sycamore+Dairy+Rd,+Fayetteville,+NC+28303" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; font-weight: 700;">📍 Get Directions (Google Maps)</a>
@@ -1521,10 +1510,9 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar（吸顶） -->
+    <!-- Main Navigation Bar -->
     <header class="site-header">
         <div class="container nav-wrapper">
-            <!-- 品牌 Logo 组 (上方为主 Logo，下方仅保留星号 + FAYETTEVILLE, NC) -->
             <div class="brand-logo-group">
                 <a href="#" aria-label="Appliances 4 Less Home">
                     <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" class="brand-logo-img">
@@ -1537,7 +1525,6 @@
                 </div>
             </div>
 
-            <!-- 桌面端菜单链接 -->
             <ul class="main-nav-links">
                 <li><a href="#catalog" onclick="filterByExactType('ALL')">Inventory</a></li>
                 <li><a href="#spotlights">Special Deals</a></li>
@@ -1560,7 +1547,6 @@
                     Hold a Unit
                 </button>
 
-                <!-- 移动端汉堡包按钮 -->
                 <button class="mobile-hamburger-btn" onclick="toggleMobileDrawer()" aria-label="Open Mobile Navigation">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -1572,7 +1558,7 @@
         </div>
     </header>
 
-    <!-- 手机端侧滑抽屉 -->
+    <!-- Mobile Drawer -->
     <div class="mobile-drawer-overlay" id="mobileDrawerOverlay" onclick="closeMobileDrawer(event)">
         <div class="mobile-drawer-panel" onclick="event.stopPropagation()">
             <div class="mobile-drawer-header">
@@ -1638,27 +1624,27 @@
                     </a>
                 </div>
 
-                <!-- 微缩图标快捷直达现货 -->
+                <!-- 微缩图标快捷直达现货（价格动态对齐库存最低价） -->
                 <div class="hero-quick-grid">
                     <div class="quick-nav-card" onclick="filterByExactType('Refrigerator')">
                         <div class="quick-nav-icon">🧊</div>
                         <div class="quick-nav-title">Refrigerators</div>
-                        <div class="quick-nav-sub">From $799</div>
+                        <div class="quick-nav-sub" id="quickPrice-Refrigerator">Loading...</div>
                     </div>
                     <div class="quick-nav-card" onclick="filterByExactType('Washer')">
                         <div class="quick-nav-icon">🧺</div>
                         <div class="quick-nav-title">Washers</div>
-                        <div class="quick-nav-sub">From $499</div>
+                        <div class="quick-nav-sub" id="quickPrice-Washer">Loading...</div>
                     </div>
                     <div class="quick-nav-card" onclick="filterByExactType('Dryer')">
                         <div class="quick-nav-icon">💨</div>
                         <div class="quick-nav-title">Dryers</div>
-                        <div class="quick-nav-sub">From $449</div>
+                        <div class="quick-nav-sub" id="quickPrice-Dryer">Loading...</div>
                     </div>
                     <div class="quick-nav-card" onclick="filterByExactType('Dishwasher')">
                         <div class="quick-nav-icon">🍽️</div>
                         <div class="quick-nav-title">Dishwashers</div>
-                        <div class="quick-nav-sub">Top Deals</div>
+                        <div class="quick-nav-sub" id="quickPrice-Dishwasher">Loading...</div>
                     </div>
                 </div>
 
@@ -1713,7 +1699,7 @@
                         <div class="spotlight-actions">
                             <div>
                                 <span style="font-size: 0.75rem; color: var(--color-text-subtle); display: block;">Lowest Prices In Town</span>
-                                <span class="spotlight-savings">Starting at $799</span>
+                                <span class="spotlight-savings" id="spotlightPrice-Refrigerator">Starting at ...</span>
                             </div>
                             <button class="btn-spotlight-shop" onclick="filterByExactType('Refrigerator')">
                                 Browse Refrigerators
@@ -1738,7 +1724,7 @@
                         <div class="spotlight-actions">
                             <div>
                                 <span style="font-size: 0.75rem; color: var(--color-text-subtle); display: block;">Save $500 – $1,200 per Pair</span>
-                                <span class="spotlight-savings">Starting at $499</span>
+                                <span class="spotlight-savings" id="spotlightPrice-Washer">Starting at ...</span>
                             </div>
                             <button class="btn-spotlight-shop" onclick="filterByExactType('Washer')">
                                 Browse Washers & Dryers
@@ -1773,7 +1759,7 @@
             </div>
             <div class="trust-item">
                 <div class="trust-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7,14.14 2,9.27 8.91,8.26 12 2"></polygon></svg>
                 </div>
                 <div class="trust-content">
                     <h5>Direct Liquidation Savings</h5>
@@ -1836,10 +1822,8 @@
                 </div>
 
                 <div class="filter-row-bottom">
-                    <span style="font-weight: 700; color: var(--color-brand-navy); white-space: nowrap;">Filter Condition:</span>
-                    <button class="condition-filter-pill active" data-condition="all" onclick="filterByCondition('all', this)">All Conditions</button>
-                    <button class="condition-filter-pill" data-condition="openbox" onclick="filterByCondition('openbox', this)">Grade A: Open Box / As-Is</button>
-                    <button class="condition-filter-pill" data-condition="scratchdent" onclick="filterByCondition('scratchdent', this)">Grade B: Scratch & Dent</button>
+                    <span style="font-weight: 700; color: var(--color-brand-navy); white-space: nowrap;">Inventory Condition:</span>
+                    <button class="condition-filter-pill active">Certified Open Box / Scratch & Dent (All Units Functional)</button>
                 </div>
             </div>
 
@@ -1848,7 +1832,7 @@
         </div>
     </section>
 
-    <!-- Financing Banner Strip (Snap Finance Highlight - In-Store Requirement) -->
+    <!-- Financing Banner Strip -->
     <section class="partners-section" id="financing">
         <div class="container">
             <div class="financing-card-banner">
@@ -2024,19 +2008,14 @@
         <div class="modal-content-card">
             <button class="modal-close-btn" onclick="closeGradingModal()">&times;</button>
             <span style="font-size: 0.75rem; font-weight: 800; color: var(--color-brand-primary); text-transform: uppercase;">A4L Inspection Disclosure</span>
-            <h3 style="font-size: 1.45rem; margin: 4px 0 12px;">Appliance Condition Grading Standard</h3>
+            <h3 style="font-size: 1.45rem; margin: 4px 0 12px;">Appliance Condition Standard</h3>
             <p style="font-size: 0.86rem; color: var(--color-text-muted); margin-bottom: 20px;">
-                We categorize all floor inventory into explicit tiers so you know the exact condition of what you buy. Every single appliance is verified 100% mechanically functional.
+                We offer verified major-brand appliances sourced through official liquidations, excess retail stock, and packaging-distressed freight inventory. Every appliance is 100% mechanically functional and bench-tested.
             </p>
 
-            <div class="grade-detail-box" style="border-left: 4px solid #1d4ed8; background: #f8fbff;">
-                <h5 style="color: #1d4ed8;">Grade A: Open Box / As-Is</h5>
-                <p>Packaging distressed or unboxed for display. The appliance shows zero to near-undetectable cosmetic marks and operates in mint condition.</p>
-            </div>
-
             <div class="grade-detail-box" style="border-left: 4px solid var(--color-brand-primary); background: #fef2f2;">
-                <h5 style="color: var(--color-brand-primary);">Grade B: Minor Scratch & Dent</h5>
-                <p>Superficial scuffs, scratches, or shallow dings on side or rear cabinets from logistics handling. Front exterior faces remain clean.</p>
+                <h5 style="color: var(--color-brand-navy); font-size: 1rem; margin-bottom: 4px;">Open Box / Scratch & Dent</h5>
+                <p>Units may show minor cosmetic blemishes, superficial scuffs, or shallow dings on the sides/rear from packaging and transport. The front panels are clean, and internal performance is 100% factory sound.</p>
             </div>
 
             <button class="btn-hero-primary" style="width: 100%; justify-content: center; margin-top: 12px;" onclick="closeGradingModal()">
@@ -2093,7 +2072,7 @@
         <span id="toastText">Action completed successfully!</span>
     </div>
 
-    <!-- 手机端轻量半毛玻璃吸底操作栏 -->
+    <!-- Mobile Bottom Bar -->
     <div class="mobile-bottom-bar">
         <div class="mobile-bottom-bar-inner">
             <a href="tel:9102246282" class="btn-bottom-call">
@@ -2112,7 +2091,6 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <!-- 页脚 Logo 与配套星号 + FAYETTEVILLE, NC 徽标 -->
                     <a href="#" aria-label="Appliances 4 Less Home">
                         <img src="A4L-STORE-SIGN-2.png" alt="Appliances 4 Less" style="height: 38px; width: auto; object-fit: contain; margin-bottom: 6px; filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85)); display: block;">
                     </a>
@@ -2178,7 +2156,6 @@
 
         let rawInventoryData = [];
         let currentSelectedType = 'ALL';
-        let currentCondition = 'all';
         let searchQuery = '';
         let currentSort = 'featured';
 
@@ -2230,7 +2207,7 @@
                 <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
                     <div class="pulse-dot" style="width: 14px; height: 14px; margin: 0 auto 16px;"></div>
                     <p style="color: var(--color-brand-navy); font-weight: 700; font-size: 1.05rem;">Loading live showroom inventory...</p>
-                    <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Synchronizing 100+ floor items...</p>
+                    <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px;">Synchronizing floor items...</p>
                 </div>
             `;
 
@@ -2251,7 +2228,6 @@
                         const realType = (row['Type'] || 'Other').toString().trim();
                         const brand = (row['Brand'] || 'LG').toString().trim();
                         const model = (row['Model'] || 'Floor Model').toString().trim();
-                        const rawGrade = (row['Grade'] || 's_asis').toString().trim().toLowerCase();
                         const msrp = Number(String(row['MAP price'] || 999).replace(/[^0-9.]/g, '')) || 999;
 
                         let rawSale = Number(String(row['Sale Price'] || '').replace(/[^0-9.]/g, ''));
@@ -2259,25 +2235,16 @@
 
                         const displayImg = resolveImageUrl(row['Image'], realType);
 
-                        let condType = 'scratchdent';
-                        let condLabel = 'Grade B: Scratch & Dent';
-                        let condClass = 'badge-scratchdent';
-
-                        if (rawGrade.includes('asis') || rawGrade.includes('as-is') || rawGrade.includes('open') || rawGrade.includes('grade a')) {
-                            condType = 'openbox';
-                            condLabel = 'Grade A: Open Box / As-Is';
-                            condClass = 'badge-openbox';
-                        }
+                        // 统一成色
+                        const unifiedLabel = 'Open Box / Scratch & Dent';
 
                         return {
                             id: (row['A4L Code'] || '').toString().trim(),
                             type: realType,
                             brand: brand,
                             model: model,
-                            grade: condLabel,
-                            conditionType: condType,
-                            conditionLabel: condLabel,
-                            conditionClass: condClass,
+                            grade: unifiedLabel,
+                            conditionLabel: unifiedLabel,
                             msrp: msrp,
                             outletPrice: outletPrice,
                             imageUrl: displayImg,
@@ -2289,6 +2256,7 @@
                     });
 
                 buildDynamicCategoryFilters();
+                updateDynamicCategoryMinPrices();
                 renderProducts();
 
             } catch (err) {
@@ -2299,6 +2267,68 @@
                         <p style="color: var(--color-text-muted); font-size: 0.9rem;">Please verify Google Sheet link permission is set to "Anyone with the link can view".</p>
                     </div>
                 `;
+            }
+        }
+
+        // 精确匹配各品类最低实际售价（优先处理 Dishwasher 避免与 Washer 冲突）
+        function updateDynamicCategoryMinPrices() {
+            const categoryMinPrices = {};
+
+            rawInventoryData.forEach(item => {
+                const lowType = (item.type || '').toLowerCase().trim();
+                let catKey = null;
+
+                // 1. 优先匹配 Dishwasher，防止被后方的 wash/washer 拦截
+                if (lowType.includes('dish') || lowType.includes('dishwasher')) {
+                    catKey = 'Dishwasher';
+                }
+                // 2. 匹配冰箱
+                else if (lowType.includes('refrigerat') || lowType.includes('fridge')) {
+                    catKey = 'Refrigerator';
+                }
+                // 3. 匹配洗衣机
+                else if (lowType.includes('washer') || lowType === 'wash') {
+                    catKey = 'Washer';
+                }
+                // 4. 匹配烘干机
+                else if (lowType.includes('dryer') || lowType === 'dry') {
+                    catKey = 'Dryer';
+                }
+
+                if (catKey) {
+                    if (!categoryMinPrices[catKey] || item.outletPrice < categoryMinPrices[catKey]) {
+                        categoryMinPrices[catKey] = item.outletPrice;
+                    }
+                }
+            });
+
+            // 更新 Hero 区域微缩卡片最低价
+            ['Refrigerator', 'Washer', 'Dryer', 'Dishwasher'].forEach(cat => {
+                const quickEl = document.getElementById(`quickPrice-${cat}`);
+                if (quickEl) {
+                    if (categoryMinPrices[cat]) {
+                        quickEl.textContent = `From $${categoryMinPrices[cat].toLocaleString()}`;
+                    } else {
+                        quickEl.textContent = 'Top Deals';
+                    }
+                }
+            });
+
+            // 更新 Spotlight 推荐卡片的起步价格
+            const refSpotlight = document.getElementById('spotlightPrice-Refrigerator');
+            if (refSpotlight && categoryMinPrices['Refrigerator']) {
+                refSpotlight.textContent = `Starting at $${categoryMinPrices['Refrigerator'].toLocaleString()}`;
+            }
+
+            const washSpotlight = document.getElementById('spotlightPrice-Washer');
+            if (washSpotlight) {
+                const minLaundry = Math.min(
+                    categoryMinPrices['Washer'] || Infinity,
+                    categoryMinPrices['Dryer'] || Infinity
+                );
+                if (minLaundry !== Infinity) {
+                    washSpotlight.textContent = `Starting at $${minLaundry.toLocaleString()}`;
+                }
             }
         }
 
@@ -2372,25 +2402,17 @@
             }
         }
 
-        function filterByCondition(cond, btnElement) {
-            currentCondition = cond;
-            document.querySelectorAll('.condition-filter-pill').forEach(b => b.classList.remove('active'));
-            if (btnElement) btnElement.classList.add('active');
-            renderProducts();
-        }
-
         function renderProducts() {
             let filtered = rawInventoryData.filter(item => {
                 const matchesType = (currentSelectedType === 'ALL') || 
                                     (item.type.toLowerCase() === currentSelectedType.toLowerCase());
-                const matchesCond = (currentCondition === 'all') || (item.conditionType === currentCondition);
                 const q = searchQuery.toLowerCase();
                 const matchesSearch = item.model.toLowerCase().includes(q) ||
                                       item.brand.toLowerCase().includes(q) ||
                                       item.id.toLowerCase().includes(q) ||
                                       item.type.toLowerCase().includes(q);
 
-                return matchesType && matchesCond && matchesSearch;
+                return matchesType && matchesSearch;
             });
 
             if (currentSort === 'discount') {
@@ -2421,7 +2443,7 @@
                 return `
                     <article class="product-card">
                         <div class="product-media-wrap">
-                            <span class="badge-condition ${item.conditionClass}">${item.conditionLabel}</span>
+                            <span class="badge-condition">${item.conditionLabel}</span>
                             <span class="badge-discount-percent">${percentSavings}% OFF</span>
                             <img src="${item.imageUrl}" alt="${escapeHtml(item.brand)} ${escapeHtml(item.model)}" loading="lazy" onerror="this.src='p4.jpg'">
                         </div>
@@ -2489,14 +2511,12 @@
 
         function resetAllFilters() {
             currentSelectedType = 'ALL';
-            currentCondition = 'all';
             searchQuery = '';
             currentSort = 'featured';
             liveSearchInput.value = '';
             document.getElementById('sortSelect').value = 'featured';
             if (mobileCategorySelect) mobileCategorySelect.value = 'ALL';
             document.querySelectorAll('#dynamicCategoryPills .pill-btn').forEach((b, idx) => b.classList.toggle('active', idx === 0));
-            document.querySelectorAll('.condition-filter-pill').forEach((b, idx) => b.classList.toggle('active', idx === 0));
             renderProducts();
         }
 
@@ -2525,7 +2545,7 @@
 
             const detailHtml = `
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-                    <span class="badge-condition ${item.conditionClass}" style="position: static;">${item.conditionLabel}</span>
+                    <span class="badge-condition" style="position: static;">${item.conditionLabel}</span>
                     <span style="font-size: 0.8rem; font-weight: 700; color: #059669;">● In Showroom</span>
                 </div>
                 <h3 style="font-size: 1.35rem; line-height: 1.3; margin-bottom: 4px;">${escapeHtml(item.brand)} ${escapeHtml(item.model)}</h3>
